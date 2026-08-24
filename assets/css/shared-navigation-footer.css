@@ -2,12 +2,13 @@
 /* Shared Apex Motion navigation */
 .site-header{position:sticky;top:0;z-index:1000;background:var(--white,#fff);border-bottom:1px solid var(--line,#ddd8d2)}
 .site-nav{max-width:1200px;margin:auto;min-height:76px;padding:0 24px;display:flex;align-items:center;gap:28px}
-.site-nav .nav-brand{display:flex;align-items:center;gap:10px;margin-right:auto;text-decoration:none;color:inherit}
+.site-nav .nav-brand{display:flex;align-items:center;gap:10px;margin-right:auto;text-decoration:none;color:#C08A35}
+body.dark .site-nav .nav-brand{color:#C08A35}
 .site-nav .nav-brand-mark{width:38px;height:38px;border-radius:10px;background:#3B163A;display:grid;place-items:center}
 .site-nav .nav-brand-mark svg{width:27px}
 .site-nav .nav-brand-mark path{fill:none;stroke:#F0C986;stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round}
-.site-nav .nav-brand-name{font:700 18px/1 "Space Grotesk",sans-serif}
-.site-nav .nav-brand-name small{display:block;font:700 7px/1 "DM Sans",sans-serif;letter-spacing:1.4px;color:var(--muted,#716c70);margin-top:4px}
+.site-nav .nav-brand-name{font:700 18px/1 "Space Grotesk",sans-serif;color:#C08A35}
+.site-nav .nav-brand-name small{display:block;font:700 7px/1 "DM Sans",sans-serif;letter-spacing:1.4px;color:#C08A35;margin-top:4px}
 .site-nav .nav-links{display:flex;align-items:center;gap:5px;list-style:none;margin:0;padding:0}
 .site-nav .nav-links>li{position:relative}
 .site-nav .nav-links a,.site-nav .nav-drop-btn{display:flex;align-items:center;gap:6px;padding:10px 11px;border:0;background:transparent;color:inherit;font:600 14px "DM Sans",sans-serif;text-decoration:none;border-radius:7px;cursor:pointer;white-space:nowrap}
@@ -89,10 +90,12 @@ body.dark .na-head small{color:#b5adba}
 .nav-avatar-menu a:hover,.nav-avatar-menu button.na-out:hover{background:rgba(59,22,58,.07)}
 body.dark .nav-avatar-menu a:hover,body.dark .nav-avatar-menu button.na-out:hover{background:rgba(240,201,134,.13)}
 .nav-avatar-menu button.na-out{color:#b3323a;font-weight:600;margin-top:2px}
-/* ===== unified footer brand (same as navbar) ===== */
-.site-footer-brand .nav-brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:inherit;margin:0 0 12px}
-.site-footer-brand .nav-brand-mark{width:38px;height:38px;border-radius:10px;background:#3B163A;display:grid;place-items:center;flex:none;border:1px solid rgba(240,201,134,.4)}
+/* ===== unified footer brand (same as navbar, every theme) ===== */
+.site-footer-brand .nav-brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:inherit;margin:0 0 12px;background:transparent;padding:0}
+.site-footer-brand .nav-brand-mark{width:38px;height:38px;border-radius:10px;background:#3B163A;display:grid;place-items:center;flex:none;border:1px solid rgba(240,201,134,.55)}
 .site-footer-brand .nav-brand-mark svg{width:27px}
 .site-footer-brand .nav-brand-mark path{fill:none;stroke:#F0C986;stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round}
-.site-footer-brand .nav-brand-name{font:700 18px/1 "Space Grotesk",sans-serif;color:#fff}
-.site-footer-brand .nav-brand-name small{display:block;font:700 7px/1 "DM Sans",sans-serif;letter-spacing:1.4px;color:#d6cbd5;margin-top:4px;text-align:left}
+.site-footer-brand .nav-brand-name{font:700 18px/1 "Space Grotesk",sans-serif;color:#C08A35}
+.site-footer-brand .nav-brand-name small{display:block;font:700 7px/1 "DM Sans",sans-serif;letter-spacing:1.4px;color:#C08A35;margin-top:4px;text-align:left}
+
+
