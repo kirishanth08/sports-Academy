@@ -1,0 +1,23 @@
+/* Apex Motion — site-wide entrance & scroll animations */
+html.js-anim [data-anim]{opacity:0;transform:translateY(28px);transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1)}
+html.js-anim [data-anim="left"]{transform:translateX(-32px)}
+html.js-anim [data-anim="right"]{transform:translateX(32px)}
+html.js-anim [data-anim="zoom"]{transform:scale(.93)}
+html.js-anim [data-anim].in-view{opacity:1;transform:none}
+
+@keyframes amFadeIn{from{opacity:0}to{opacity:1}}
+@keyframes amRise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes amFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+html.js-anim .hero-photo{animation:amFadeIn 1.1s ease both}
+html.js-anim .site-footer-socials a{transition:transform .25s ease,background .25s ease,color .25s ease}
+
+@media(prefers-reduced-motion:reduce){
+  html.js-anim [data-anim]{opacity:1!important;transform:none!important;transition:none!important}
+  html.js-anim .hero-photo{animation:none}
+}
+
+/* ===== hover lift + 3D tilt (engine: animations.js) ===== */
+[data-tilt]{transform-style:preserve-3d;will-change:transform}
+[data-tilt]:hover{z-index:5}
+@media(prefers-reduced-motion:reduce){[data-tilt]{transition:none!important}}

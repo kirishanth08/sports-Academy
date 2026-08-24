@@ -1,0 +1,11 @@
+/* Apex Motion Academy shared base styles */
+*{box-sizing:border-box}
+img{max-width:100%;height:auto}
+button,a,input,select,textarea{font:inherit}
+
+/* Site-wide readability: larger, clearer text */
+body{font-size:16px}
+p{font-size:15px !important;line-height:1.65 !important}
+li{font-size:15px}
+button,input,select,textarea{font-size:14.5px !important}
+td,th{font-size:14px !important;line-height:1.5}

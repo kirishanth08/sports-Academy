@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard — Apex Motion Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/admin-dashboard.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/admin-help.css">  <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body>
+<div class="app">
+
+<aside class="sidebar" id="sidebar">
+<div class="brand">
+<div class="brand-mark"><svg viewBox="0 0 48 48"><path d="M24 7L39 37H9Z"></path><path d="M17 28h14"></path></svg></div>
+<div class="brand-copy"><b>APEX</b><small>MOTION ACADEMY</small></div>
+</div>
+
+<nav class="nav">
+<div class="nav-label">OVERVIEW</div>
+<a class="active" href="admin-dashboard.html"><span class="icon">⌂</span>Dashboard</a>
+
+<div class="nav-label inline-style-1">ACADEMY MANAGEMENT</div>
+<a href="admin-students.html"><span class="icon">♙</span>Students</a>
+<a href="admin-coaches.html"><span class="icon">◉</span>Coaches</a>
+<a href="admin-programs.html"><span class="icon">▦</span>Programs</a>
+<a href="admin-schedules.html"><span class="icon">◷</span>Schedules</a>
+<a href="admin-attendance.html"><span class="icon">✓</span>Attendance</a>
+
+<div class="nav-label inline-style-1">OPERATIONS</div>
+<a href="admin-enrollments.html"><span class="icon">▤</span>Enrollments</a>
+<a href="admin-tournaments.html"><span class="icon">◇</span>Tournaments & Trials</a>
+<a href="admin-messages.html"><span class="icon">✉</span>Messages</a>
+<div class="nav-label inline-style-1">SYSTEM</div>
+<a href="admin-settings.html"><span class="icon">⚙</span>Settings</a>
+<a href="#" data-help><span class="icon">?</span>Help & Support</a>
+</nav>
+
+<div class="sidebar-bottom">
+<div class="admin-mini"><div class="avatar">AM</div><div><b>Academy Admin</b><span>Administrator</span></div></div>
+<button class="logout" id="logout">Log out</button>
+</div>
+</aside>
+
+<div class="overlay" id="overlay"></div>
+
+<section class="main">
+<header class="topbar">
+<button class="menu-btn" id="menu">☰</button>
+<div class="top-title"><b>Dashboard Overview</b><span>Academy operations at a glance</span></div>
+<div class="top-actions">
+<button class="top-btn" id="theme" title="Toggle dark mode">◐</button>
+<button class="top-btn" id="rtl" title="Toggle RTL">RTL</button>
+<button class="top-btn" id="notification" title="Notifications">♢<i class="badge-dot"></i></button>
+</div>
+</header>
+
+<main class="content">
+<div class="welcome">
+<div>
+<div class="eyebrow">ADMIN / OVERVIEW</div>
+<h1>Good morning, Admin.</h1>
+<p>Here is what is happening across Apex Motion Academy today.</p>
+</div>
+<div class="date">Sunday, 23 August 2026</div>
+</div>
+
+<section class="cards">
+<div class="stat"><div class="stat-top"><div class="stat-icon">♙</div><span class="stat-change">+8.4%</span></div><h3>486</h3><p>Active Students</p></div>
+<div class="stat"><div class="stat-top"><div class="stat-icon">◉</div><span class="stat-change">+2</span></div><h3>24</h3><p>Active Coaches</p></div>
+<div class="stat"><div class="stat-top"><div class="stat-icon">▦</div><span class="stat-change">+1</span></div><h3>5</h3><p>Sports Programs</p></div>
+<div class="stat"><div class="stat-top"><div class="stat-icon">▤</div><span class="stat-change">+12.6%</span></div><h3>42</h3><p>New Enrollments</p></div>
+</section>
+
+<div class="grid">
+<section class="panel">
+<div class="panel-head"><div><h2>Enrollment & Attendance</h2><span>Monthly academy activity</span></div><a class="panel-link" href="admin-attendance.html">View report →</a></div>
+<div class="panel-body">
+<div class="chart">
+<div class="bar-group"><div class="bar inline-style-2"></div><div class="bar alt inline-style-3"></div><span class="month">Mar</span></div>
+<div class="bar-group"><div class="bar inline-style-4"></div><div class="bar alt inline-style-5"></div><span class="month">Apr</span></div>
+<div class="bar-group"><div class="bar inline-style-6"></div><div class="bar alt inline-style-7"></div><span class="month">May</span></div>
+<div class="bar-group"><div class="bar inline-style-8"></div><div class="bar alt inline-style-9"></div><span class="month">Jun</span></div>
+<div class="bar-group"><div class="bar inline-style-10"></div><div class="bar alt inline-style-11"></div><span class="month">Jul</span></div>
+<div class="bar-group"><div class="bar inline-style-12"></div><div class="bar alt inline-style-13"></div><span class="month">Aug</span></div>
+</div>
+<div class="legend"><span><i></i>Enrollments</span><span><i class="alt"></i>Attendance</span></div>
+</div>
+</section>
+
+<section class="panel">
+<div class="panel-head"><div><h2>Attendance Snapshot</h2><span>Current month</span></div><a class="panel-link" href="admin-attendance.html">Details →</a></div>
+<div class="panel-body attendance">
+<div class="donut-wrap"><div class="donut"></div><div class="donut-number">91%</div><div class="donut-label">PRESENT</div></div>
+<div>
+<div class="att-row"><span>Present</span><b>91%</b></div>
+<div class="att-row"><span>Absent</span><b>6%</b></div>
+<div class="att-row"><span>Excused</span><b>3%</b></div>
+<div class="att-row"><span>Total sessions</span><b>1,284</b></div>
+</div>
+</div>
+</section>
+</div>
+
+<div class="grid">
+<section class="panel">
+<div class="panel-head"><div><h2>Today's Sessions</h2><span>Upcoming academy batches</span></div><a class="panel-link" href="admin-schedules.html">Manage →</a></div>
+<div class="panel-body sessions">
+<div class="session"><div class="session-time"><b>04:00</b><span>PM</span></div><div class="session-info"><b>Football · Juniors</b><span>Coach Arjun · Field A · 18 students</span></div><span class="tag">ON TRACK</span></div>
+<div class="session"><div class="session-time"><b>05:15</b><span>PM</span></div><div class="session-info"><b>Basketball · U16</b><span>Coach Maya · Court 2 · 14 students</span></div><span class="tag">ON TRACK</span></div>
+<div class="session"><div class="session-time"><b>06:00</b><span>PM</span></div><div class="session-info"><b>Badminton · Intermediate</b><span>Coach Neha · Hall B · 12 students</span></div><span class="tag pending">STARTING</span></div>
+<div class="session"><div class="session-time"><b>06:30</b><span>PM</span></div><div class="session-info"><b>Athletics · Performance</b><span>Coach Daniel · Track · 16 students</span></div><span class="tag">ON TRACK</span></div>
+</div>
+</section>
+
+<section class="panel">
+<div class="panel-head"><div><h2>Recent Enrollments</h2><span>Latest registrations</span></div><a class="panel-link" href="admin-enrollments.html">View all →</a></div>
+<div class="list">
+<div class="list-item"><div class="person">RK</div><div class="person-info"><b>Rohan Kumar</b><span>Football · Junior Program</span></div><span class="status">CONFIRMED</span></div>
+<div class="list-item"><div class="person">AS</div><div class="person-info"><b>Ananya Shah</b><span>Badminton · Intermediate</span></div><span class="status">CONFIRMED</span></div>
+<div class="list-item"><div class="person">VM</div><div class="person-info"><b>Vihaan Mehta</b><span>Basketball · U16</span></div><span class="status pending">PENDING</span></div>
+<div class="list-item"><div class="person">PS</div><div class="person-info"><b>Priya Sharma</b><span>Athletics · Development</span></div><span class="status">CONFIRMED</span></div>
+</div>
+</section>
+</div>
+
+<section class="panel inline-style-14">
+<div class="panel-head"><div><h2>Quick Actions</h2><span>Common admin tasks</span></div></div>
+<div class="panel-body quick">
+<button class="quick-nav" data-href="admin-students.html"><span class="qicon">♙</span><b>Add Student</b><span>Create a new student profile</span></button>
+<button class="quick-nav" data-href="admin-schedules.html"><span class="qicon">◷</span><b>Create Schedule</b><span>Add a training batch</span></button>
+<button class="quick-nav" data-href="admin-tournaments.html"><span class="qicon">◇</span><b>Post Trial</b><span>Add tournament or trial</span></button>
+<button class="quick-nav" data-href="admin-messages.html"><span class="qicon">✉</span><b>Send Message</b><span>Contact students or parents</span></button>
+</div>
+</section>
+
+</main>
+</section>
+</div>
+
+<div class="help-popup" id="helpPopup"><div class="help-box"><div class="help-head"><h2>Help & Support</h2><button class="help-close" data-close-help>×</button></div><div class="help-body"><p>Choose a support option or describe the issue you need help with.</p><div class="help-options"><button type="button" onclick="document.getElementById('helpMessage').classList.add('show')"><b>Dashboard Guide</b><span>Learn how each admin section works.</span></button><button type="button" onclick="document.getElementById('helpMessage').classList.add('show')"><b>Report an Issue</b><span>Tell support what went wrong.</span></button><button type="button" onclick="document.getElementById('helpMessage').classList.add('show')"><b>Account Support</b><span>Get help with admin access.</span></button><button type="button" onclick="document.getElementById('helpMessage').classList.add('show')"><b>Contact Support</b><span>Send a support enquiry.</span></button></div><textarea id="helpMessage" placeholder="Describe your question or issue..."></textarea></div><div class="help-footer"><button id="helpSend">Send Request</button></div></div></div><script src="assets/js/admin-dashboard.js"></script>
+<script src="assets/js/site.js"></script>
+  <script src="assets/js/navigation.js"></script>
+
+</html>

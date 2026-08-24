@@ -1,0 +1,49 @@
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+:root{--plum:#3B163A;--honey:#F0C986;--cream:#FBFAF7;--ink:#171516;--muted:#716c70;--line:#ddd8d2;--white:#fff;--soft:#eee9e1}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:"DM Sans",sans-serif;transition:.25s}
+body.dark{--cream:#111012;--ink:#f7f4ee;--muted:#aaa3a8;--line:#373237;--white:#1b181b;--soft:#211e21}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,calc(100% - 44px));margin:auto}
+header{height:76px;border-bottom:1px solid var(--line);background:rgba(251,250,247,.95);backdrop-filter:blur(14px)}
+.dark header{background:rgba(17,16,18,.95)}
+.nav{height:76px;display:flex;align-items:center;gap:22px}
+.logo{display:flex;align-items:center;gap:10px;margin-right:auto}
+.logo-mark{width:41px;height:41px;background:var(--plum);border-radius:11px;display:grid;place-items:center}
+.logo-mark svg{width:28px}.logo-mark circle{fill:var(--honey)}.logo-mark path{fill:none;stroke:var(--plum);stroke-width:3;stroke-linecap:round}
+.logo-copy{display:flex;flex-direction:column;line-height:1}.logo-copy b{font:700 18px "Space Grotesk"}.logo-copy small{font-size:9px;letter-spacing:1.8px;margin-top:5px;color:var(--muted)}
+nav{display:flex;gap:17px;font-size:13px;font-weight:600;color:var(--muted)}
+nav a:hover{color:var(--plum)}.dark nav a:hover{color:var(--honey)}
+.actions{display:flex;align-items:center;gap:7px}.actions button{height:36px;min-width:36px;border:1px solid var(--line);border-radius:50%;background:transparent;color:var(--ink);cursor:pointer;font-size:12px}.actions>a{font-size:13px;font-weight:700;padding:9px}.signup{background:var(--plum);color:#fff!important;border-radius:7px}#menu{display:none}
+
+.error{min-height:calc(100vh - 76px);display:grid;place-items:center;position:relative;overflow:hidden;padding:65px 0}
+.error:before{content:"404";position:absolute;left:-20px;top:45%;transform:translateY(-50%);font:700 clamp(240px,38vw,570px)/.75 "Space Grotesk";letter-spacing:-35px;color:rgba(59,22,58,.045);pointer-events:none}
+.dark .error:before{color:rgba(240,201,134,.035)}
+.error-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;position:relative;z-index:2}
+.error-copy{max-width:560px}
+.eyebrow{font-size:10px;letter-spacing:2.3px;font-weight:800;color:var(--plum)}
+.dark .eyebrow{color:var(--honey)}
+.error-copy h1{font:700 clamp(58px,8vw,104px)/.86 "Space Grotesk";letter-spacing:-5px;margin:17px 0 23px}
+.error-copy h1 span{color:var(--plum)}.dark .error-copy h1 span{color:var(--honey)}
+.error-copy p{font-size:16px;line-height:1.75;color:var(--muted);max-width:510px;margin:0 0 28px}
+.actions-row{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--plum);background:var(--plum);color:#fff;padding:13px 19px;border-radius:8px;font:700 13px "DM Sans";cursor:pointer}
+.btn.alt{background:transparent;color:var(--plum)}.dark .btn.alt{color:var(--honey);border-color:var(--honey)}
+.visual{height:430px;border-radius:28px;background:var(--plum);position:relative;overflow:hidden;display:grid;place-items:center;box-shadow:0 25px 60px rgba(59,22,58,.15)}
+.visual:before{content:"";position:absolute;width:310px;height:310px;border:1px solid rgba(240,201,134,.4);border-radius:50%}
+.visual:after{content:"";position:absolute;width:185px;height:185px;border:1px solid rgba(240,201,134,.4);border-radius:50%}
+.ball{width:108px;height:108px;border-radius:50%;background:var(--honey);position:relative;z-index:2;display:grid;place-items:center;box-shadow:0 20px 50px rgba(0,0,0,.2)}
+.ball:before{content:"";width:44px;height:44px;border:5px solid var(--plum);border-radius:50%;position:absolute}
+.ball:after{content:"";width:105px;height:35px;border-top:4px solid var(--plum);border-bottom:4px solid var(--plum);position:absolute;transform:rotate(-35deg);opacity:.9}
+.visual-label{position:absolute;z-index:3;bottom:22px;left:24px;color:#fff;font:600 11px "Space Grotesk";letter-spacing:1.4px}
+.visual-number{position:absolute;right:24px;top:20px;color:rgba(255,255,255,.35);font:700 74px/.8 "Space Grotesk";letter-spacing:-5px}
+.quick{margin-top:48px;border-top:1px solid var(--line);padding-top:21px;display:flex;gap:25px;flex-wrap:wrap}
+.quick span{font-size:10px;text-transform:uppercase;letter-spacing:1.4px;font-weight:800;color:var(--muted)}
+.quick a{font-size:12px;font-weight:700;color:var(--ink)}.quick a:hover{color:var(--plum)}.dark .quick a:hover{color:var(--honey)}
+
+footer{background:#171316;color:#fff;padding:24px 0}
+.bottom{display:flex;justify-content:space-between;gap:20px;color:#777;font-size:11px}
+@media(max-width:950px){nav{display:none}#menu{display:block}.actions>a{display:none}.error-grid{grid-template-columns:1fr;gap:40px}.error-copy{max-width:700px}.visual{height:340px;max-width:650px}}
+@media(max-width:600px){.container{width:calc(100% - 30px)}.error{padding:45px 0}.error:before{font-size:230px;left:-15px}.error-copy h1{font-size:61px;letter-spacing:-3px}.error-copy p{font-size:14px}.visual{height:290px;border-radius:20px}.visual:before{width:220px;height:220px}.visual:after{width:135px;height:135px}.ball{width:82px;height:82px}.ball:before{width:33px;height:33px;border-width:4px}.ball:after{width:80px;height:27px;border-width:3px}.quick{gap:12px;display:grid}.bottom{display:block}.bottom span{display:block;margin-top:8px}}
+.visual-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.visual-number{z-index:3;text-shadow:0 2px 16px rgba(23,19,22,.55)}
+.visual-label{text-shadow:0 1px 10px rgba(23,19,22,.6)}

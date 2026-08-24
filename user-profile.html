@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Apex Motion — My Profile</title>
+<link rel="stylesheet" href="assets/css/user-dashboard.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body>
+<div class="app">
+<aside class="sidebar" id="sidebar">
+<div class="brand"><div class="brand-mark"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 7L39 37H9Z"></path><path d="M17 28h14"></path></svg></div><div><strong>APEX MOTION</strong><span>Sports Academy</span></div></div>
+<div class="nav-title">Student Portal</div><nav class="nav">
+    <a href="user-dashboard.html" class=""><span class="icon">⌂</span>Overview</a>
+    <a href="user-schedule.html" class=""><span class="icon">◷</span>My Schedule</a>
+    <a href="user-attendance.html" class=""><span class="icon">◔</span>Attendance</a>
+    <a href="user-progress.html" class=""><span class="icon">↗</span>My Progress</a>
+    <a href="user-tournaments.html" class=""><span class="icon">◇</span>Tournaments & Trials</a>
+    </nav>
+<div class="nav-title">Account</div><nav class="nav">
+    <a href="user-profile.html" class="active"><span class="icon">○</span>My Profile</a>
+    <a href="#" data-modal="support"><span class="icon">?</span>Help & Support</a>
+    </nav>
+<div class="sidebar-bottom"><button class="logout-link" type="button" data-logout>Log out</button><div class="profile-mini"><div class="avatar">AK</div><div><strong>Arjun Kumar</strong><span>Student · U14</span></div></div></div>
+</aside>
+<main class="main">
+<header class="topbar">
+<div class="breadcrumb"><button class="top-btn mobile-menu" data-menu>☰</button><span class="breadcrumb-prefix">Student Portal / </span><b>My Profile</b></div>
+<div class="top-actions"><button class="top-btn notification" data-notifications>♧</button><button class="top-btn" data-theme>◐</button><button class="top-btn hide-mobile" data-rtl>RTL</button></div>
+</header>
+<section class="content">
+<div class="page-hero"><div class="eyebrow">ACCOUNT</div><h1>My Profile</h1><p>View and manage your student information.</p></div>
+<div class="grid two"><section class="card"><div class="card-head"><h2>Personal Details</h2><span>Student profile</span></div><div class="card-body"><form data-demo-form><div class="form-grid">
+<div class="field"><label>FULL NAME</label><input value="Arjun Kumar"></div>
+<div class="field"><label>DATE OF BIRTH</label><input type="date" value="2012-05-18"></div>
+<div class="field"><label>EMAIL</label><input type="email" value="arjun@example.com"></div>
+<div class="field"><label>PHONE</label><input value="+91 98765 43210"></div>
+<div class="field full"><label>ADDRESS</label><textarea>Coimbatore, Tamil Nadu</textarea></div>
+</div><div class="admin-modal-actions"><button class="action-btn primary" type="submit">Save Changes</button></div></form></div></section>
+<section class="card"><div class="card-head"><h2>Enrolled Programs</h2><span>Current season</span></div><div class="card-body"><div class="note"><strong>Football</strong><p>Junior Development · U14</p></div><div class="note"><strong>Basketball</strong><p>Skills Lab · U14</p></div><div class="note"><strong>Athletics</strong><p>Speed & Agility · U14</p></div></div></section></div>
+</section>
+</main></div>
+<div class="toast" id="toast"></div>
+<div class="admin-modal" id="supportModal">
+<div class="admin-modal-box">
+<div class="admin-modal-head"><div><h2>Help & Support</h2><p>Tell the academy team what you need help with.</p></div><button class="admin-modal-close" type="button" data-support-close>×</button></div>
+<div class="admin-modal-body">
+<form id="supportForm">
+<div class="form-grid">
+<div class="field"><label>TOPIC</label><select required><option value="">Select a topic</option><option>Schedule</option><option>Attendance</option><option>Program</option><option>Account</option><option>Other</option></select></div>
+<div class="field"><label>PRIORITY</label><select required><option>Normal</option><option>Urgent</option></select></div>
+<div class="field full"><label>MESSAGE</label><textarea required placeholder="Describe your question or issue..."></textarea></div>
+</div>
+<div class="admin-modal-actions"><button type="button" class="action-btn" data-support-close>Cancel</button><button type="submit" class="action-btn primary">Send Request</button></div>
+</form>
+</div></div></div>
+<script src="assets/js/user-dashboard.js"></script>
+  <script>window.DISABLE_TILT=true;</script>
+<script src="assets/js/animations.js"></script>
+</body></html>

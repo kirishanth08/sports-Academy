@@ -1,0 +1,5 @@
+User dashboard is integrated under user-dashboard/.
+Entry: user-dashboard.html
+Separate pages: schedule, attendance, progress, tournaments, profile.
+Shared CSS/JS: assets/css/user-dashboard.css and assets/js/user-dashboard.js.
+Login and signup redirect to user-dashboard.html after demo submission.

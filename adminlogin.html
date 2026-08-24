@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Login — Apex Motion Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/adminlogin.css">
+<link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body>
+
+<header><div class="container nav"><a class="auth-back" href="index.html">&#8592; Back to site</a><div class="actions"><button id="theme" type="button" aria-label="Toggle dark mode">&#9789;</button><button id="rtl" type="button" aria-label="Toggle RTL">RTL</button></div></div></header>
+
+<main>
+<div class="container login-wrap">
+<section class="form-side">
+
+<div class="auth-brand">
+<a class="logo" href="index.html">
+<span class="logo-mark"><svg viewBox="0 0 48 48"><path d="M24 7L39 37H9Z"></path><path d="M17 28h14"></path></svg></span>
+<span class="logo-copy"><b>APEX</b><small>MOTION ACADEMY</small></span>
+</a>
+</div>
+
+<div class="inline-style-1">
+<div class="admin-badge"><span class="admin-dot"></span> ACADEMY ADMIN PORTAL</div>
+</div>
+
+<div class="eyebrow">STAFF ACCESS</div>
+<h1>Admin sign in.</h1>
+<p class="sub">Access academy operations, manage students and coaches, review schedules and keep training programs moving.</p>
+
+<form class="form" id="adminLoginForm">
+<div class="field">
+<label for="email">ADMIN EMAIL</label>
+<input id="email" type="email" required autocomplete="username" placeholder="admin@apexmotion.com">
+</div>
+
+<div class="field">
+<label for="password">PASSWORD</label>
+<div class="input-wrap">
+<input id="password" type="password" required autocomplete="current-password" placeholder="Enter your password">
+<button type="button" class="toggle-pass" id="togglePass">Show</button>
+</div>
+</div>
+
+<div class="row">
+<label class="check"><input type="checkbox" id="remember"> Remember me</label>
+<a class="forgot" href="#" id="forgot">Forgot password?</a>
+</div>
+
+<button class="submit" type="submit">Sign in to Admin &#8594;</button>
+</form>
+
+<div class="divider">SECURE STAFF ACCESS</div>
+
+<p class="back">New academy staff account? <a href="adminsignup.html">Create Admin Account →</a></p>
+<p class="back">Not an administrator? <a href="login.html">Return to user login</a></p>
+
+<div class="security-note">
+<div class="security-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l8 3v6c0 5-3.4 9.4-8 11-4.6-1.6-8-6-8-11V5z" fill="none" stroke="#F0C986" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" fill="none" stroke="#F0C986" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div><strong>Protected academy area</strong><span>Admin access is intended for authorized academy staff. Connect this form to your authentication service before production deployment.</span></div>
+</div>
+
+</section>
+</div>
+</main>
+
+<footer>
+<div class="container bottom"><span>© 2026 Apex Motion Academy. All rights reserved.</span><span>Train smart. Play with purpose.</span></div>
+</footer>
+
+<div id="toast"></div>
+
+<script src="assets/js/adminlogin.js"></script>
+<script src="assets/js/site.js"></script>
+  <script src="assets/js/navigation.js"></script>
+  <script src="assets/js/animations.js"></script>
+</body>
+</html>
