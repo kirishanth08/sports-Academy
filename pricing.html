@@ -42,6 +42,7 @@
     <div class="nav-actions">
       <button class="nav-action" data-theme-toggle type="button" aria-label="Toggle dark mode">◐</button>
       <button class="nav-action" data-rtl-toggle type="button" aria-label="Toggle RTL">RTL</button>
+      <button class="nav-action cart-toggle" data-cart-toggle type="button" aria-label="Open cart">Cart <span class="cart-badge">0</span></button>
       <a class="nav-action nav-login" href="login.html">Login</a><a class="nav-action nav-signup" href="signup.html">Sign Up</a>
     </div>
   </nav>
@@ -60,9 +61,9 @@
 <div class="section-head"><div><div class="eyebrow">02 / MEMBERSHIP PLANS</div><h2>Pick your<br><em>training level.</em></h2></div><p>Whether you're starting out, developing a sport-specific skill set or preparing for competition, the plan should reflect how seriously you intend to train.</p></div>
 <div class="billing"><span>Monthly</span><button class="toggle" id="billingToggle" aria-label="Switch billing period"><i></i></button><span>Annual <b class="save">SAVE 15%</b></span></div>
 <div class="price-grid">
-<article class="price-card"><h3 class="plan">Foundation</h3><p class="plan-desc">For young athletes building movement, confidence and sport fundamentals.</p><div class="price"><span class="monthly-price">₹2,499</span><span class="yearly-price">₹25,490</span> <small>/ athlete</small></div><div class="billing-note">2 sessions per week</div><div class="features"><div><span class="check">✓</span> Sport-specific group coaching</div><div><span class="check">✓</span> Access to standard facilities</div><div><span class="check">✓</span> Monthly attendance tracking</div><div><span class="check">✓</span> Coach progress note each term</div></div><a class="plan-btn choose" href="signup.html" data-plan="Foundation">Choose Foundation</a></article>
-<article class="price-card featured"><span class="popular">MOST POPULAR</span><h3 class="plan">Development</h3><p class="plan-desc">For athletes ready for more technical repetition, challenge and feedback.</p><div class="price"><span class="monthly-price">₹3,999</span><span class="yearly-price">₹40,790</span> <small>/ athlete</small></div><div class="billing-note">3 sessions per week</div><div class="features"><div><span class="check">✓</span> Everything in Foundation</div><div><span class="check">✓</span> Three weekly training sessions</div><div><span class="check">✓</span> Skill assessment each quarter</div><div><span class="check">✓</span> Development-focused coach feedback</div><div><span class="check">✓</span> Priority trial & camp access</div></div><a class="plan-btn choose" href="signup.html" data-plan="Development">Choose Development</a></article>
-<article class="price-card"><h3 class="plan">Performance</h3><p class="plan-desc">For competitive athletes who need higher training volume and preparation.</p><div class="price"><span class="monthly-price">₹5,499</span><span class="yearly-price">₹56,090</span> <small>/ athlete</small></div><div class="billing-note">4 sessions per week</div><div class="features"><div><span class="check">✓</span> Everything in Development</div><div><span class="check">✓</span> Four weekly training sessions</div><div><span class="check">✓</span> Competition preparation blocks</div><div><span class="check">✓</span> Performance review & goal setting</div><div><span class="check">✓</span> Tournament registration guidance</div></div><a class="plan-btn choose" href="signup.html" data-plan="Performance">Choose Performance</a></article>
+<article class="price-card"><h3 class="plan">Foundation</h3><p class="plan-desc">For young athletes building movement, confidence and sport fundamentals.</p><div class="price"><span class="monthly-price">₹2,499</span><span class="yearly-price">₹25,490</span> <small>/ athlete</small></div><div class="billing-note">2 sessions per week</div><div class="features"><div><span class="check">✓</span> Sport-specific group coaching</div><div><span class="check">✓</span> Access to standard facilities</div><div><span class="check">✓</span> Monthly attendance tracking</div><div><span class="check">✓</span> Coach progress note each term</div></div><button class="plan-btn choose" data-plan="Foundation">Choose Foundation</button></article>
+<article class="price-card featured"><span class="popular">MOST POPULAR</span><h3 class="plan">Development</h3><p class="plan-desc">For athletes ready for more technical repetition, challenge and feedback.</p><div class="price"><span class="monthly-price">₹3,999</span><span class="yearly-price">₹40,790</span> <small>/ athlete</small></div><div class="billing-note">3 sessions per week</div><div class="features"><div><span class="check">✓</span> Everything in Foundation</div><div><span class="check">✓</span> Three weekly training sessions</div><div><span class="check">✓</span> Skill assessment each quarter</div><div><span class="check">✓</span> Development-focused coach feedback</div><div><span class="check">✓</span> Priority trial & camp access</div></div><button class="plan-btn choose" data-plan="Development">Choose Development</button></article>
+<article class="price-card"><h3 class="plan">Performance</h3><p class="plan-desc">For competitive athletes who need higher training volume and preparation.</p><div class="price"><span class="monthly-price">₹5,499</span><span class="yearly-price">₹56,090</span> <small>/ athlete</small></div><div class="billing-note">4 sessions per week</div><div class="features"><div><span class="check">✓</span> Everything in Development</div><div><span class="check">✓</span> Four weekly training sessions</div><div><span class="check">✓</span> Competition preparation blocks</div><div><span class="check">✓</span> Performance review & goal setting</div><div><span class="check">✓</span> Tournament registration guidance</div></div><button class="plan-btn choose" data-plan="Performance">Choose Performance</button></article>
 </div><div class="note">Illustrative academy pricing. Final fees, taxes, sport-specific charges and availability are confirmed during enrolment.</div>
 </div></section>
 
@@ -100,6 +101,72 @@
 
 
 <div id="toast" role="status" aria-live="polite"></div>
+
+<!-- Login required modal -->
+<div class="modal-overlay" id="loginRequiredModal">
+<div class="modal-box" style="max-width:400px;text-align:center">
+<div class="modal-head"><h2>Login Required</h2><button class="modal-close" data-login-close>x</button></div>
+<div class="modal-body">
+<p style="color:var(--muted);font-size:14px;line-height:1.7;margin:0 0 20px">Please log in to your account before proceeding to payment. Your cart items will be saved.</p>
+<button class="btn-gold" id="loginRequiredBtn">Go to Login</button>
+</div>
+</div>
+</div>
+
+<!-- Plan details modal -->
+<div class="modal-overlay" id="planModal">
+<div class="modal-box">
+<div class="modal-head"><h2 id="planModalTitle">Plan</h2><button class="modal-close" data-plan-close>x</button></div>
+<div class="modal-body">
+<p class="plan-modal-desc" id="planModalDesc"></p>
+<div class="plan-modal-price"><span class="plan-modal-amount" id="planModalPrice"></span><small>/ athlete</small></div>
+<div class="plan-modal-sessions" id="planModalSessions"></div>
+<div class="plan-modal-features" id="planModalFeatures"></div>
+<div class="plan-modal-billing"><label><input type="radio" name="planBilling" value="monthly" checked> Monthly</label><label><input type="radio" name="planBilling" value="yearly"> Annual <b>SAVE 15%</b></label></div>
+<button class="btn-gold plan-modal-add" id="planModalAdd">Add to Cart</button>
+</div>
+</div>
+</div>
+
+<!-- Cart slide-in panel -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<div class="cart-panel" id="cartPanel">
+<div class="cart-head"><h2>Your Cart</h2><button class="modal-close" data-cart-close>x</button></div>
+<div class="cart-body" id="cartBody">
+<div class="cart-empty">Your cart is empty.</div>
+</div>
+<div class="cart-foot">
+<div class="cart-total"><span>Total</span><strong id="cartTotal">₹0</strong></div>
+<button class="btn-gold cart-checkout" id="cartCheckout">Proceed to Payment</button>
+</div>
+</div>
+
+<!-- Checkout modal -->
+<div class="modal-overlay" id="checkoutModal">
+<div class="modal-box checkout-box">
+<div class="modal-head"><h2>Payment Details</h2><button class="modal-close" data-checkout-close>x</button></div>
+<div class="modal-body">
+<div class="checkout-summary" id="checkoutSummary"></div>
+<form id="checkoutForm" class="checkout-form">
+<div class="field"><label>FULL NAME</label><input type="text" required placeholder="Arjun Kumar"></div>
+<div class="field"><label>EMAIL</label><input type="email" required placeholder="arjun@example.com"></div>
+<div class="field"><label>PHONE</label><input type="tel" required placeholder="+91 98765 43210"></div>
+<div class="field"><label>CARD NUMBER</label><input type="text" required placeholder="4242 4242 4242 4242" maxlength="19" id="cardNum"></div>
+<div class="field-row">
+<div class="field"><label>EXPIRY</label><input type="text" required placeholder="MM/YY" maxlength="5" id="cardExp"></div>
+<div class="field"><label>CVV</label><input type="text" required placeholder="123" maxlength="3" id="cardCvv"></div>
+</div>
+<button type="submit" class="btn-gold checkout-pay" id="checkoutPay">Pay Now</button>
+</form>
+<div class="checkout-success" id="checkoutSuccess" style="display:none">
+<div class="check-icon">✓</div>
+<h3>Payment Successful!</h3>
+<p>Your membership has been activated. Welcome to Apex Motion Academy!</p>
+<a class="btn-gold" href="index.html">Go to Home</a>
+</div>
+</div>
+</div>
+</div>
 
 <script src="assets/js/pricing.js"></script>
 <script src="assets/js/site.js"></script>

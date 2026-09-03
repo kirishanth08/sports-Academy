@@ -104,3 +104,63 @@ document.querySelectorAll("[data-logout]").forEach(btn => {
   const brand=document.querySelector(".brand,.admin-brand");
   if(brand){brand.style.cursor="pointer";brand.title="Back to home";brand.addEventListener("click",()=>location.href="index.html");}
 })();
+/* ---- profile save / load (user-profile.html only) ---- */
+(function(){
+  var form=document.querySelector("form[data-profile]");
+  if(!form) return;
+  var saved={};
+  try{ saved=JSON.parse(localStorage.getItem("apex-profile")||"{}"); }catch(e){}
+  var keys=["name","dob","email","phone","address"];
+  var inputs=[].slice.call(form.querySelectorAll("input,textarea"));
+  inputs.forEach(function(inp,i){ if(saved[keys[i]]) inp.value=saved[keys[i]]; });
+
+  form.addEventListener("submit",function(e){
+    e.preventDefault();
+    var data={};
+    inputs.forEach(function(inp,i){ data[keys[i]]=inp.value; });
+    localStorage.setItem("apex-profile",JSON.stringify(data));
+    /* update sidebar name + greeting immediately */
+    var sideName=document.querySelector(".sidebar-bottom strong");
+    if(sideName&&data.name) sideName.textContent=data.name;
+    try{
+      var s=JSON.parse(localStorage.getItem("apex-session"));
+      if(s){ s.name=data.name; localStorage.setItem("apex-session",JSON.stringify(s)); }
+    }catch(x){}
+    /* update greeting if present */
+    var wh=document.querySelector(".welcome h1");
+    if(wh&&data.name){
+      var hr=new Date().getHours();
+      var g=hr<12?"Good morning":hr<18?"Good afternoon":"Good evening";
+      wh.textContent=g+", "+data.name.split(" ")[0]+".";
+    }
+    showToast("Profile updated successfully.");
+  });
+})();
+
+/* ---- inline editable dashboard values (data-editable elements) ---- */
+(function(){
+  var key="apex-dash-data";
+  var page="user-dashboard";
+  var editables=[].slice.call(document.querySelectorAll("[data-editable]"));
+  if(!editables.length) return;
+  var saved={};
+  try{ saved=JSON.parse(localStorage.getItem(key)||"{}")[page]||{}; }catch(e){}
+  editables.forEach(function(el,i){
+    if(saved[i]!==undefined) el.innerHTML=saved[i];
+    el.setAttribute("contenteditable","true");
+    el.style.outline="none";
+    el.style.borderRadius="4px";
+    el.addEventListener("focus",function(){
+      el.style.boxShadow="0 0 0 2px rgba(240,201,134,.45)";
+    });
+    el.addEventListener("blur",function(){
+      el.style.boxShadow="none";
+      var store={};
+      try{ store=JSON.parse(localStorage.getItem(key)||"{}"); }catch(e){}
+      store[page]={};
+      editables.forEach(function(e2,j){ store[page][j]=e2.innerHTML; });
+      localStorage.setItem(key,JSON.stringify(store));
+      showToast("Dashboard updated.");
+    });
+  });
+})();

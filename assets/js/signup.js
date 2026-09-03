@@ -77,7 +77,9 @@ const accounts=apexAuth.load();
 accounts.push({name:name,email:email.toLowerCase(),password:password,role:typeBtn?typeBtn.dataset.type:"student"});
 apexAuth.save(accounts);
 showToast("Account created! Redirecting you to sign in...");
-setTimeout(()=>location.href="login.html?registered=1&email="+encodeURIComponent(email),900);
+const redir=new URLSearchParams(location.search).get("redirect");
+const redirectParam=redir?"&redirect="+encodeURIComponent(redir):"";
+setTimeout(()=>location.href="login.html?registered=1&email="+encodeURIComponent(email)+redirectParam,900);
 };
 
 document.querySelectorAll("[data-social]").forEach(btn=>{

@@ -25,6 +25,9 @@ if(account.role==="admin"){showToast("This is an admin account. Use the Admin si
 if(account.password!==password){showToast("Incorrect password. Please try again.");return}
 localStorage.setItem("apex-session",JSON.stringify({name:account.name,email:account.email,role:account.role}));
 showToast("Welcome back, "+account.name+"!");
-setTimeout(()=>location.href="user-dashboard.html",800)};
+const redirect=new URLSearchParams(location.search).get("redirect");
+setTimeout(()=>location.href=redirect||"user-dashboard.html",800)};
 document.getElementById("forgot").onclick=e=>{e.preventDefault();showToast("Password reset instructions would be sent here.")};
 document.querySelectorAll("[data-social]").forEach(b=>b.onclick=()=>showToast(b.dataset.social+" sign-in is ready to connect."));
+/* preserve redirect param on signup link */
+(function(){const q=new URLSearchParams(location.search);const r=q.get("redirect");if(r){document.querySelectorAll('a[href="signup.html"]').forEach(a=>{a.href="signup.html?redirect="+encodeURIComponent(r)});}})();

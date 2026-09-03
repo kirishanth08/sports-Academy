@@ -44,5 +44,69 @@ footer{background:#171316;color:#fff;padding:60px 0 20px}.foot{display:grid;grid
 @media(max-width:1050px){nav{display:none}#menu{display:block}.actions a{display:none}.hero-grid,.included-grid{grid-template-columns:1fr}.price-grid{grid-template-columns:1fr 1fr}.addon-grid{grid-template-columns:1fr 1fr}.foot{grid-template-columns:1fr 1fr}}
 @media(max-width:650px){.hero-photo{height:230px}.container{width:calc(100% - 30px)}.hero{padding:53px 0 62px}.hero h1{font-size:57px;letter-spacing:-2.5px}.section{padding:68px 0}.section-head{display:block;margin-bottom:30px}.section-head p{margin-top:17px}.price-grid,.addon-grid{grid-template-columns:1fr}.price-card.featured{transform:none}.included h2{font-size:45px}.include-row{grid-template-columns:38px 1fr}.include-row span{grid-column:2}.cta-box{display:block;padding:32px}.cta-box h2{font-size:43px}.foot{grid-template-columns:1fr}.bottom{display:block}.bottom span{display:block;margin-top:8px}}
 
+/* cart toggle + badge */
+.cart-toggle{position:relative}
+.cart-badge{position:absolute;top:2px;right:2px;background:var(--honey);color:var(--plum);font:700 9px "DM Sans";border-radius:50%;width:16px;height:16px;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:.2s}
+.cart-badge.show{opacity:1;pointer-events:auto}
+
+/* modal overlay */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:200;display:none;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.open{display:flex}
+.modal-box{background:var(--white);border-radius:18px;max-width:520px;width:100%;max-height:85vh;overflow-y:auto;border:1px solid var(--line)}
+.modal-head{display:flex;justify-content:space-between;align-items:center;padding:22px 26px 0}
+.modal-head h2{font:700 24px "Space Grotesk";margin:0}
+.modal-close{background:none;border:0;font-size:20px;cursor:pointer;color:var(--muted);padding:4px 8px;border-radius:6px}
+.modal-close:hover{background:var(--soft)}
+.modal-body{padding:18px 26px 26px}
+.plan-modal-desc{color:var(--muted);font-size:13px;line-height:1.7;margin:0 0 16px}
+.plan-modal-price{font:700 38px "Space Grotesk";color:var(--plum);margin-bottom:4px}.dark .plan-modal-price{color:var(--honey)}
+.plan-modal-sessions{font-size:12px;color:var(--muted);margin-bottom:18px;border-bottom:1px solid var(--line);padding-bottom:14px}
+.plan-modal-features div{display:flex;gap:10px;font-size:13px;margin:10px 0;line-height:1.5}
+.plan-modal-features .check{color:var(--plum);font-weight:900}.dark .plan-modal-features .check{color:var(--honey)}
+.plan-modal-billing{display:flex;gap:16px;margin:16px 0 0;font-size:13px;font-weight:600;color:var(--muted)}
+.plan-modal-billing label{cursor:pointer;display:flex;align-items:center;gap:5px}
+.plan-modal-billing input[type=radio]{accent-color:var(--plum)}
+.plan-modal-billing b{color:var(--plum);font-size:11px}
+.btn-gold{display:block;width:100%;background:var(--honey);color:var(--plum);border:0;padding:13px;border-radius:8px;font:700 14px "Space Grotesk";cursor:pointer;text-align:center;margin-top:20px;transition:.15s}
+.btn-gold:hover{opacity:.88}
+
+/* cart panel */
+.cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:190;opacity:0;pointer-events:none;transition:.25s}
+.cart-overlay.open{opacity:1;pointer-events:auto}
+.cart-panel{position:fixed;top:0;right:0;width:min(420px,92vw);height:100%;background:var(--white);z-index:210;transform:translateX(100%);transition:.3s;display:flex;flex-direction:column;border-left:1px solid var(--line)}
+.cart-panel.open{transform:translateX(0)}
+.cart-head{display:flex;justify-content:space-between;align-items:center;padding:22px 24px;border-bottom:1px solid var(--line)}
+.cart-head h2{font:700 22px "Space Grotesk";margin:0}
+.cart-body{flex:1;overflow-y:auto;padding:20px 24px}
+.cart-empty{text-align:center;color:var(--muted);padding:50px 0;font-size:14px}
+.cart-item{display:flex;justify-content:space-between;align-items:start;border-bottom:1px solid var(--line);padding:16px 0}
+.cart-item:last-child{border-bottom:0}
+.cart-item-info h3{font:700 16px "Space Grotesk";margin:0 0 4px}
+.cart-item-info p{font-size:12px;color:var(--muted);margin:0}
+.cart-item-info .cart-item-billing{font-size:11px;color:var(--plum);font-weight:600;margin-top:4px}.dark .cart-item-info .cart-item-billing{color:var(--honey)}
+.cart-item-price{font:700 18px "Space Grotesk";white-space:nowrap}
+.cart-item-remove{background:none;border:0;color:var(--muted);font-size:11px;cursor:pointer;margin-top:4px;padding:2px 0}
+.cart-item-remove:hover{color:#c0392b}
+.cart-foot{border-top:1px solid var(--line);padding:18px 24px}
+.cart-total{display:flex;justify-content:space-between;align-items:center;font:700 18px "Space Grotesk";margin-bottom:12px}
+.cart-checkout{pointer-events:auto}
+
+/* checkout form */
+.checkout-box{max-width:480px}
+.checkout-summary{background:var(--soft);border-radius:10px;padding:16px;margin-bottom:18px}
+.checkout-summary div{display:flex;justify-content:space-between;font-size:13px;margin:6px 0}
+.checkout-summary strong{font:700 15px "Space Grotesk"}
+.checkout-form .field{margin-bottom:14px}
+.checkout-form .field label{display:block;font:600 11px "DM Sans";letter-spacing:1px;color:var(--muted);margin-bottom:5px}
+.checkout-form .field input{width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:7px;font-size:13px;background:var(--cream);color:var(--ink);outline:none}
+.checkout-form .field input:focus{border-color:var(--plum)}.dark .checkout-form .field input:focus{border-color:var(--honey)}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.checkout-pay{margin-top:4px}
+.checkout-success{text-align:center;padding:30px 0}
+.checkout-success .check-icon{width:56px;height:56px;background:var(--honey);color:var(--plum);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:28px;font-weight:900;margin-bottom:16px}
+.checkout-success h3{font:700 22px "Space Grotesk";margin:0 0 8px}
+.checkout-success p{color:var(--muted);font-size:13px;line-height:1.7;margin:0 0 18px}
+.checkout-success .btn-gold{width:auto;display:inline-block;padding:13px 28px}
+
 /* Extracted former inline styles */
 .inline-style-1{color:#fff}
