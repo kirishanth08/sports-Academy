@@ -10,7 +10,18 @@
 <body>
 <div class="app">
 <aside class="sidebar" id="sidebar">
-<div class="brand"><div class="brand-mark"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 7L39 37H9Z"></path><path d="M17 28h14"></path></svg></div><div><strong>APEX MOTION</strong><span>Sports Academy</span></div></div>
+<div class="brand">
+  <div class="brand-mark" style="background:transparent;padding:0;">
+    <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:36px;height:36px;" aria-hidden="true">
+      <path d="M22 3.5L38 9.5V23C38 31.8 31.2 38.8 22 41.5C12.8 38.8 6 31.8 6 23V9.5L22 3.5Z" fill="#F0C986" stroke="#FFF9ED" stroke-width="1.8"/>
+      <path d="M22 10L31.5 31H26.2L22 20.8L17.8 31H12.5L22 10Z" fill="#3B163A"/>
+      <path d="M16 26H28" stroke="#F0C986" stroke-width="2.6" stroke-linecap="round"/>
+      <circle cx="22" cy="14" r="2" fill="#3B163A"/>
+    </svg>
+  </div>
+  <div><strong>APEX MOTION</strong><span>Sports Academy</span></div>
+</div>
+<a href="index.html" class="back-site-link">← Back to Academy Website</a>
 <div class="nav-title">Student Portal</div><nav class="nav">
     <a href="user-dashboard.html" class="active"><span class="icon">⌂</span>Overview</a>
     <a href="user-schedule.html" class=""><span class="icon">◷</span>My Schedule</a>
@@ -22,34 +33,97 @@
     <a href="user-profile.html" class=""><span class="icon">○</span>My Profile</a>
     <a href="#" data-modal="support"><span class="icon">?</span>Help & Support</a>
     </nav>
-<div class="sidebar-bottom"><button class="logout-link" type="button" data-logout>Log out</button><div class="profile-mini"><div class="avatar">AK</div><div><strong>Arjun Kumar</strong><span>Student · U14</span></div></div></div>
+<div class="sidebar-bottom">
+  <button class="logout-link" type="button" data-logout>Log out</button>
+  <div class="profile-mini"><div class="avatar">AK</div><div><strong>Arjun Kumar</strong><span>Student · U14</span></div></div>
+</div>
 </aside>
 <main class="main">
 <header class="topbar">
 <div class="breadcrumb"><button class="top-btn mobile-menu" data-menu>☰</button><span class="breadcrumb-prefix">Student Portal / </span><b>Overview</b></div>
-<div class="top-actions"><button class="top-btn notification" data-notifications>♧</button><button class="top-btn" data-theme>◐</button><button class="top-btn hide-mobile" data-rtl>RTL</button></div>
+<div class="top-actions">
+  <a href="index.html" class="top-btn" title="View Academy Website" style="text-decoration:none;font-size:12px;font-weight:700;width:auto;padding:0 12px;">Website ↗</a>
+  <button class="top-btn notification" data-notifications title="Notifications">♧</button>
+  <button class="top-btn" data-theme title="Toggle Dark Mode">◐</button>
+  <button class="top-btn hide-mobile" data-rtl title="Toggle RTL">RTL</button>
+</div>
 </header>
 <section class="content">
-<div class="welcome"><div><div class="eyebrow">STUDENT DASHBOARD</div><h1>Good morning, Arjun.</h1><p>A quick look at your current training activity.</p></div>
-<div class="date-box"><span>Next training</span><strong>Football · Today, 5:30 PM</strong></div></div>
+<div class="welcome">
+  <div>
+    <div class="eyebrow">ATHLETE PORTAL & OVERVIEW</div>
+    <h1>Good morning, Arjun.</h1>
+    <p>Here is your weekly training activity, attendance, and coach performance notes.</p>
+  </div>
+  <div class="date-box">
+    <span>Next training</span>
+    <strong>Football · Today, 5:30 PM</strong>
+  </div>
+</div>
+
+<div class="quick-actions-bar">
+  <a href="#" class="quick-action-btn primary" data-modal="support"><span>+</span> Book Extra Session</a>
+  <button class="quick-action-btn" type="button" onclick="const t=document.getElementById('toast');if(t){t.textContent='Progress report downloaded (PDF)';t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000);}"><span>📥</span> Download Report Card</button>
+  <a href="#" class="quick-action-btn" data-modal="support"><span>✉</span> Message Head Coach</a>
+  <a href="user-schedule.html" class="quick-action-btn"><span>📅</span> View Full Schedule</a>
+</div>
+
 <div class="grid stats">
 <div class="card stat"><small data-editable>Active Programs</small><strong data-editable>3</strong><span data-editable>Football · Basketball · Athletics</span></div>
-<div class="card stat"><small data-editable>Attendance</small><strong data-editable>92%</strong><span data-editable class="up">↑ 4% this month</span></div>
-<div class="card stat"><small data-editable>Sessions This Month</small><strong data-editable>14</strong><span data-editable>12 completed · 2 upcoming</span></div>
-<div class="card stat"><small data-editable>Upcoming Events</small><strong data-editable>3</strong><span data-editable>Trials & tournaments</span></div>
+<div class="card stat"><small data-editable>Attendance Rate</small><strong data-editable>92%</strong><span data-editable class="up">↑ 4% this month</span></div>
+<div class="card stat"><small data-editable>Completed Sessions</small><strong data-editable>24</strong><span data-editable>12 this month · 0 missed</span></div>
+<div class="card stat"><small data-editable>Coach Rating</small><strong data-editable>4.9 <small style="font-size:16px;font-weight:500;">/ 5</small></strong><span data-editable class="up">Elite Development Squad</span></div>
 </div>
+
 <div class="grid two">
-<section class="card"><div class="card-head"><h2>Next Training</h2><a class="text-action" href="user-schedule.html">View Schedule →</a></div><div class="card-body">
+<section class="card"><div class="card-head"><h2>Next Training Sessions</h2><a class="text-action" href="user-schedule.html">Full Schedule →</a></div><div class="card-body">
 <div class="schedule-list">
 <div class="session"><div class="session-time">TODAY<br>5:30 PM</div><div class="session-main"><strong>Football · Junior Development</strong><span>Field A · Coach Arjun Rao</span></div><span class="tag gold">Football</span></div>
 <div class="session"><div class="session-time">TUE<br>6:15 PM</div><div class="session-main"><strong>Basketball · Skills Lab</strong><span>Court 2 · Coach Maya Shah</span></div><span class="tag">Basketball</span></div>
 <div class="session"><div class="session-time">THU<br>5:00 PM</div><div class="session-main"><strong>Athletics · Speed & Agility</strong><span>Track · Coach Neha Nair</span></div><span class="tag green">Athletics</span></div>
 </div></div></section>
-<section class="card"><div class="card-head"><h2>Attendance</h2><a class="text-action" href="user-attendance.html">View Details →</a></div><div class="card-body"><div class="attendance"><div class="ring"><div><strong>92%</strong><span>Overall</span></div></div></div><div class="attendance-meta"><div><strong>24</strong><span>Present</span></div><div><strong>2</strong><span>Absent</span></div></div></div></section>
+<section class="card"><div class="card-head"><h2>Attendance Overview</h2><a class="text-action" href="user-attendance.html">View Details →</a></div><div class="card-body"><div class="attendance"><div class="ring"><div><strong>92%</strong><span>Overall</span></div></div></div><div class="attendance-meta"><div><strong>24</strong><span>Present</span></div><div><strong>2</strong><span>Absent</span></div></div></div></section>
 </div>
+
 <div class="grid two">
-<section class="card"><div class="card-head"><h2>Latest Coach Note</h2><a class="text-action" href="user-progress.html">View Progress →</a></div><div class="card-body"><div class="note"><div class="note-top"><strong>Football</strong><time>Aug 21</time></div><p data-editable>Good improvement in first-touch control. Work on scanning before receiving the ball and opening your body earlier.</p><div class="coach">— Coach Arjun Rao</div></div></div></section>
-<section class="card"><div class="card-head"><h2>Upcoming Event</h2><a class="text-action" href="user-tournaments.html">View Events →</a></div><div class="card-body"><div class="event"><div class="event-date"><b>30</b><span>AUG</span></div><div><strong data-editable>Inter-Academy Football Trials</strong><p data-editable>U14 · Main Field</p></div><span class="deadline">7 DAYS</span></div></div></section>
+<section class="card">
+  <div class="card-head"><h2>Skills & Development Progress</h2><a class="text-action" href="user-progress.html">View Breakdown →</a></div>
+  <div class="card-body">
+    <div class="skills-list">
+      <div class="skill-item">
+        <div class="skill-head"><span>Ball Control & Passing (Football)</span><b>88%</b></div>
+        <div class="skill-track"><div class="skill-bar" style="width:88%;"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-head"><span>Shooting Form & Footwork (Basketball)</span><b>82%</b></div>
+        <div class="skill-track"><div class="skill-bar" style="width:82%;"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-head"><span>Sprint Mechanics & Agility (Athletics)</span><b>91%</b></div>
+        <div class="skill-track"><div class="skill-bar" style="width:91%;"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-head"><span>Aerobic Endurance & Recovery</span><b>79%</b></div>
+        <div class="skill-track"><div class="skill-bar" style="width:79%;"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="card"><div class="card-head"><h2>Latest Coach Note</h2><a class="text-action" href="user-progress.html">View Progress →</a></div><div class="card-body"><div class="note"><div class="note-top"><strong>Football — Junior Dev</strong><time>Aug 21</time></div><p data-editable>Good improvement in first-touch control. Work on scanning before receiving the ball and opening your body earlier in transition drills.</p><div class="coach">— Coach Arjun Rao</div></div></div></section>
+</div>
+
+<div class="grid two">
+<section class="card">
+  <div class="card-head"><h2>Enrolled Programs</h2><a class="text-action" href="programs.html">Explore Programs →</a></div>
+  <div class="card-body">
+    <div class="programs-simple">
+      <div><small>Pathway 01</small><strong>Football Junior Dev</strong><span style="font-size:12px;color:var(--muted);display:block;margin-top:4px;">Mon / Wed · 5:30 PM</span></div>
+      <div><small>Pathway 02</small><strong>Basketball Skills Lab</strong><span style="font-size:12px;color:var(--muted);display:block;margin-top:4px;">Tue / Thu · 6:15 PM</span></div>
+      <div><small>Pathway 03</small><strong>Athletics Performance</strong><span style="font-size:12px;color:var(--muted);display:block;margin-top:4px;">Sat morning · 7:00 AM</span></div>
+    </div>
+  </div>
+</section>
+<section class="card"><div class="card-head"><h2>Upcoming Trials & Events</h2><a class="text-action" href="user-tournaments.html">View All →</a></div><div class="card-body"><div class="event"><div class="event-date"><b>30</b><span>AUG</span></div><div><strong data-editable>Inter-Academy Football Trials</strong><p data-editable>U14 · Main Field A · Selection for State Cup</p></div><span class="deadline">7 DAYS</span></div></div></section>
 </div>
 </section>
 </main></div>

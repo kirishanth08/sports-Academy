@@ -42,7 +42,7 @@ nav a:hover,nav .active{color:var(--plum)}.dark nav a:hover,.dark nav .active{co
 .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.post{background:var(--white);border:1px solid var(--line);border-radius:17px;overflow:hidden;display:flex;flex-direction:column}.post-image{height:190px;background:#171316;position:relative;display:flex;align-items:flex-end;padding:18px;overflow:hidden}.post-image img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,.61,.36,1)}.post:hover .post-image img{transform:scale(1.06)}.post-image::after{content:"";position:absolute;inset:0;background:linear-gradient(181deg,rgba(18,15,18,.05) 45%,rgba(18,15,18,.55) 100%);pointer-events:none}.post-image b{font:700 10px "Space Grotesk";letter-spacing:2px;color:var(--honey);position:relative;z-index:2}
 .post-body{padding:21px;display:flex;flex-direction:column;flex:1}.post-meta{font-size:10px;font-weight:800;letter-spacing:.8px;color:var(--muted);text-transform:uppercase}.post h3{font:700 22px/1.08 "Space Grotesk";margin:12px 0 9px}.post p{font-size:13px;color:var(--muted);line-height:1.7;margin:0}.post .read{margin-top:auto;padding-top:17px}.post.hidden{display:none}
 
-.categories{background:var(--cream)}.category-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.category{border:1px solid var(--line);background:var(--white);padding:22px 15px;border-radius:14px;text-align:center;cursor:pointer;transition:.2s}.category:hover,.category.active{background:var(--plum);color:#fff;border-color:var(--plum);transform:translateY(-3px)}.category b{display:block;font:700 20px "Space Grotesk";margin-bottom:6px}.category span{font-size:11px;color:var(--muted)}.category:hover span,.category.active span{color:#d9cdd6}
+.categories{background:var(--cream)}.category-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.category{border:1px solid var(--line);background:var(--white);padding:22px 15px;border-radius:14px;text-align:center;cursor:pointer;transition:.2s}.category:hover,.category.active{background:var(--plum);color:#fff;border-color:var(--plum);transform:translateY(-3px)}.category b{display:block;font:700 20px "Space Grotesk";margin-bottom:6px}.category span{font-size:13.5px;color:var(--muted)}.category:hover span,.category.active span{color:#d9cdd6}
 
 .newsletter{background:var(--plum);color:#fff}.newsletter-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}.newsletter h2{font:700 48px/.98 "Space Grotesk";letter-spacing:-3px;margin:12px 0}.newsletter p{color:#d6cad5;font-size:14px;line-height:1.75}.subscribe{display:flex;gap:8px}.subscribe input{flex:1;height:47px;border:0;border-radius:7px;padding:0 14px;font:13px "DM Sans";outline:0}.subscribe button{height:47px;border:0;border-radius:7px;background:var(--honey);color:var(--plum);font:800 12px "DM Sans";padding:0 18px;cursor:pointer}
 
@@ -68,12 +68,13 @@ footer{background:#171316;color:#fff;padding:58px 0 20px}.foot{display:grid;grid
 /* Final journal/category layout */
 .journal-categories{margin:8px 0 30px;padding:18px 0 0;border-top:1px solid var(--line)}
 .journal-controls input,.journal-controls select{height:44px;border-radius:9px;border:1px solid var(--line);background:var(--white);color:var(--ink);padding:0 14px;font:13px 'DM Sans';outline:0}.journal-controls input::placeholder{color:var(--muted)}
-.journal-category-label{font-size:10px;letter-spacing:1.8px;font-weight:800;color:var(--muted);margin-bottom:12px}
+.journal-category-label{font-size:11.5px;letter-spacing:1.8px;font-weight:800;color:var(--muted);margin-bottom:12px}
 .journal-categories .category-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
-.journal-categories .category{min-height:64px;padding:14px 10px;border:1px solid var(--line);background:var(--white);border-radius:10px;text-align:center;cursor:pointer}
-.journal-categories .category b{display:block;font:700 15px "Space Grotesk";margin-bottom:3px}
-.journal-categories .category span{font-size:10px;color:var(--muted)}
-.journal-categories .category:hover span,.journal-categories .category.active span{color:#d9cdd6}
+.journal-categories .category{min-height:72px;padding:15px 12px;border:1px solid var(--line);background:var(--white);border-radius:10px;text-align:center;cursor:pointer}
+.journal-categories .category b{display:block;font:700 16px "Space Grotesk";margin-bottom:4px}
+.journal-categories .category span{font-size:13.5px;color:#615a60;line-height:1.35;display:block}
+body.dark .journal-categories .category span{color:#c5bbc4}
+.journal-categories .category:hover span,.journal-categories .category.active span{color:#f0e4ee}
 .library{padding-bottom:95px}
 .cta{padding-top:12px}
 @media(max-width:1050px){

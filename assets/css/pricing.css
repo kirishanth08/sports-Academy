@@ -11,7 +11,8 @@ header{position:sticky;top:0;z-index:50;background:rgba(251,250,247,.95);backdro
 nav{display:flex;gap:17px;font-size:13px;font-weight:600;color:var(--muted)}nav a:hover,nav .active{color:var(--plum)}.dark nav a:hover,.dark nav .active{color:var(--honey)}
 .actions{display:flex;align-items:center;gap:7px}.actions button{height:36px;min-width:36px;border:1px solid var(--line);border-radius:50%;background:transparent;color:var(--ink);cursor:pointer;font-size:12px}.actions a{font-size:13px;font-weight:700;padding:9px}.signup{background:var(--plum);color:#fff!important;border-radius:7px}#menu{display:none}
 .hero{background:var(--plum);color:#fff;padding:72px 0 82px;position:relative;overflow:hidden}.hero:after{content:"VALUE";position:absolute;right:-35px;bottom:-40px;font:700 175px/.8 "Space Grotesk";letter-spacing:-12px;color:rgba(240,201,134,.055)}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:65px;align-items:end;position:relative;z-index:2}.eyebrow{font-size:12px;letter-spacing:2px;font-weight:800;color:var(--honey)}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:65px;align-items:center;position:relative;z-index:2}.eyebrow{font-size:12px;letter-spacing:2px;font-weight:800;color:var(--honey)}
+.hero-grid > div:first-child{margin-top:-14px}
 .hero h1{font:700 clamp(56px,7vw,88px)/.9 "Space Grotesk";letter-spacing:-4px;margin:17px 0 23px}.hero h1 span{color:var(--honey)}.hero p{font-size:17px;line-height:1.75;color:#ded4dc;max-width:610px;margin:0}
 .hero-note{border-left:2px solid var(--honey);padding-left:20px}.hero-note strong{display:block;font:700 27px "Space Grotesk";margin-bottom:9px}.hero-note span{font-size:14px;color:#d6cad5;line-height:1.7}
 .hero-visual{display:grid;gap:20px}

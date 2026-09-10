@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" fill="none">
+  <g transform="translate(2, 2)">
+    <rect width="44" height="44" rx="12" fill="#3B163A"/>
+    <path d="M22 5L37 10.5V23C37 31.5 30.5 38.2 22 40.5C13.5 38.2 7 31.5 7 23V10.5L22 5Z" fill="#3B163A" stroke="#F0C986" stroke-width="1.8"/>
+    <path d="M22 11.5L30 29.5H25.3L22 21L18.7 29.5H14L22 11.5Z" fill="#F0C986"/>
+    <path d="M17.5 25.5H26.5" stroke="#3B163A" stroke-width="2.4" stroke-linecap="round"/>
+    <circle cx="22" cy="15" r="1.6" fill="#FFF8EB"/>
+  </g>
+  <text x="56" y="27" font-family="'Space Grotesk', sans-serif" font-weight="800" font-size="21" fill="#171516" letter-spacing="-0.3">APEX</text>
+  <text x="56" y="38" font-family="'DM Sans', sans-serif" font-weight="700" font-size="8.5" fill="#9E6B20" letter-spacing="1.8">MOTION ACADEMY</text>
+</svg>
