@@ -14,7 +14,24 @@ const CART_KEY="apex-cart";
 function getCart(){try{return JSON.parse(localStorage.getItem(CART_KEY)||"[]")}catch(e){return[]}}
 function saveCart(c){localStorage.setItem(CART_KEY,JSON.stringify(c))}
 function cartCount(){return getCart().length}
-function updateBadge(){const b=document.querySelector(".cart-badge");if(!b)return;const n=cartCount();b.textContent=n;b.classList.toggle("show",n>0)}
+function updateBadge(){
+  const b=document.querySelector(".cart-badge");
+  const btn=document.querySelector("[data-cart-toggle]");
+  const n=cartCount();
+  if(b){
+    b.textContent=n;
+    b.classList.toggle("show",n>0);
+  }
+  if(btn){
+    if(n>0){
+      btn.style.display="inline-flex";
+      btn.classList.add("visible");
+    }else{
+      btn.style.display="none";
+      btn.classList.remove("visible");
+    }
+  }
+}
 
 /* ========== plan data from DOM ========== */
 const planData={};
@@ -100,9 +117,11 @@ function closeCart(){cartPanel.classList.remove("open");cartOverlay.classList.re
 function renderCart(){
   const items=getCart();
   if(!items.length){
-    cartBody.innerHTML='<div class="cart-empty">Your cart is empty.</div>';
+    cartBody.innerHTML='<div class="cart-empty"><p style="margin:0 0 16px">Your cart is empty.</p><button type="button" class="btn-gold" style="width:auto;display:inline-block;padding:10px 22px;font-size:13px;margin:0 auto" id="continueShoppingBtn">Continue Browsing</button></div>';
     cartTotal.textContent="₹0";
     document.getElementById("cartCheckout").style.display="none";
+    const csBtn=document.getElementById("continueShoppingBtn");
+    if(csBtn) csBtn.addEventListener("click",closeCart);
     return;
   }
   let html="",total=0;

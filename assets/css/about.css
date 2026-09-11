@@ -91,9 +91,9 @@ body.dark .value p{color:#c9bfc7}
 .team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .coach{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--white);box-shadow:0 10px 25px rgba(0,0,0,.04);transition:transform .3s ease,box-shadow .3s ease}
 .coach:hover{transform:translateY(-5px);box-shadow:0 16px 36px rgba(59,22,58,.12)}
-.coach-art{height:230px;background:var(--plum);position:relative;overflow:hidden}
-.coach-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.22,.61,.36,1)}
-.coach:hover .coach-art img{transform:scale(1.06)}
+.coach-art{height:275px;background:var(--plum);position:relative;overflow:hidden}
+.coach-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .5s cubic-bezier(.22,.61,.36,1)}
+.coach:hover .coach-art img{transform:scale(1.04);transform-origin:center top}
 .coach-info{padding:18px}
 .coach-info h3{font:700 19px "Space Grotesk";margin:0 0 6px}
 .coach-info p{font-size:13px;color:#544d53;margin:0;line-height:1.55}
