@@ -27,7 +27,9 @@ nav a:hover,nav .active{color:var(--plum)}.dark nav a:hover,.dark nav .active{co
 .hero:before{content:"";position:absolute;width:610px;height:610px;border:1px solid rgba(240,201,134,.18);border-radius:50%;right:-205px;top:-300px}
 .hero:after{content:"";position:absolute;width:390px;height:390px;border:1px solid rgba(240,201,134,.14);border-radius:50%;right:-80px;top:-185px}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(350px,.85fr);gap:65px;align-items:center;position:relative;z-index:2}
-.eyebrow{font-size:10px;letter-spacing:2px;font-weight:800;color:var(--honey)}
+.eyebrow{font-size:11.5px;letter-spacing:2px;font-weight:800;color:var(--plum)}
+.hero .eyebrow{color:var(--honey)}
+body.dark .eyebrow{color:var(--honey)}
 .hero h1{font:700 clamp(56px,7vw,86px)/.92 "Space Grotesk";letter-spacing:-4px;margin:18px 0 23px}
 .hero h1 span{color:var(--honey)}
 .hero p{font-size:14px;line-height:1.8;color:#ded4dc;max-width:600px;margin:0}

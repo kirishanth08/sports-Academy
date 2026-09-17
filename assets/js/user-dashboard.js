@@ -119,8 +119,8 @@ document.querySelectorAll("[data-logout]").forEach(btn => {
     var data={};
     inputs.forEach(function(inp,i){ data[keys[i]]=inp.value; });
     localStorage.setItem("apex-profile",JSON.stringify(data));
-    /* update sidebar name + greeting immediately */
-    var sideName=document.querySelector(".sidebar-bottom strong");
+    /* update profile name + greeting immediately */
+    var sideName=document.querySelector(".profile-mini strong, .topbar-profile strong, .sidebar-bottom strong");
     if(sideName&&data.name) sideName.textContent=data.name;
     try{
       var s=JSON.parse(localStorage.getItem("apex-session"));

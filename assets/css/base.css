@@ -1,5 +1,5 @@
-/* Apex Motion Academy shared base styles */
 *{box-sizing:border-box}
+html,body{overflow-x:hidden;width:100%;max-width:100%}
 img{max-width:100%;height:auto}
 button,a,input,select,textarea{font:inherit}
 

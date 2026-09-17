@@ -39,8 +39,28 @@ nav a:hover,nav .active{color:var(--plum)}.dark nav a:hover,.dark nav .active{co
 .read{display:inline-flex;align-items:center;gap:9px;color:var(--plum);font-size:13px;font-weight:800;margin-top:17px}.dark .read{color:var(--honey)}
 
 .library{background:var(--soft)}.tools{display:flex;gap:12px;align-items:center;margin-bottom:30px}.search{width:320px;flex:0 0 320px;position:relative}.search input{width:100%;height:45px;border:1px solid var(--line);background:var(--white);color:var(--ink);border-radius:8px;padding:0 15px;font:500 13px "DM Sans";outline:0}.search input:focus{border-color:var(--plum)}.filter{height:45px;border:1px solid var(--line);background:var(--white);color:var(--ink);border-radius:8px;padding:0 13px;font:600 12px "DM Sans";outline:0;cursor:pointer}.filter:focus{border-color:var(--plum)}
-.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.post{background:var(--white);border:1px solid var(--line);border-radius:17px;overflow:hidden;display:flex;flex-direction:column}.post-image{height:190px;background:#171316;position:relative;display:flex;align-items:flex-end;padding:18px;overflow:hidden}.post-image img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,.61,.36,1)}.post:hover .post-image img{transform:scale(1.06)}.post-image::after{content:"";position:absolute;inset:0;background:linear-gradient(181deg,rgba(18,15,18,.05) 45%,rgba(18,15,18,.55) 100%);pointer-events:none}.post-image b{font:700 10px "Space Grotesk";letter-spacing:2px;color:var(--honey);position:relative;z-index:2}
-.post-body{padding:21px;display:flex;flex-direction:column;flex:1}.post-meta{font-size:10px;font-weight:800;letter-spacing:.8px;color:var(--muted);text-transform:uppercase}.post h3{font:700 22px/1.08 "Space Grotesk";margin:12px 0 9px}.post p{font-size:13px;color:var(--muted);line-height:1.7;margin:0}.post .read{margin-top:auto;padding-top:17px}.post.hidden{display:none}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch}
+.post{background:var(--white);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;height:100%;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.post:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(59,22,58,.09);border-color:rgba(59,22,58,.2)}
+.post-image{height:200px;background:#171316;position:relative;display:flex;align-items:flex-end;padding:20px 24px;overflow:hidden;flex-shrink:0}
+.post-image img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,.61,.36,1)}
+.post:hover .post-image img{transform:scale(1.06)}
+.post-image::after{content:"";position:absolute;inset:0;background:linear-gradient(181deg,rgba(18,15,18,.05) 45%,rgba(18,15,18,.6) 100%);pointer-events:none}
+.post-image b{font:700 11px/1 "Space Grotesk";letter-spacing:1.8px;color:var(--honey);position:relative;z-index:2;background:rgba(18,15,18,.65);padding:5px 11px;border-radius:6px;backdrop-filter:blur(4px);border:1px solid rgba(240,201,134,.35)}
+.post-body{padding:24px;display:flex;flex-direction:column;flex:1}
+.post-meta{font-size:11.5px;font-weight:800;letter-spacing:1.2px;color:var(--plum);text-transform:uppercase;margin:0 0 10px 0;line-height:1.2}
+.post h3{font:700 21px/1.25 "Space Grotesk";margin:0 0 12px 0;color:var(--ink);min-height:78px}
+.post p{font-size:14px;color:#50494f;line-height:1.65;margin:0 0 18px 0;min-height:70px}
+.post .read{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);font-weight:800;font-size:13px;color:var(--plum);display:inline-flex;align-items:center;gap:8px;transition:gap .2s ease,color .2s ease}
+.post:hover .read{gap:12px}
+.post.hidden{display:none}
+
+/* High contrast dual theme for blog cards */
+body.dark .post{background:#1b181b;border-color:#373237}
+body.dark .post-meta{color:var(--honey)!important}
+body.dark .post h3{color:#f7f4ee!important}
+body.dark .post p{color:#ded4dc!important}
+body.dark .post .read{color:var(--honey)!important;border-top-color:#373237}
 
 .categories{background:var(--cream)}.category-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.category{border:1px solid var(--line);background:var(--white);padding:22px 15px;border-radius:14px;text-align:center;cursor:pointer;transition:.2s}.category:hover,.category.active{background:var(--plum);color:#fff;border-color:var(--plum);transform:translateY(-3px)}.category b{display:block;font:700 20px "Space Grotesk";margin-bottom:6px}.category span{font-size:13.5px;color:var(--muted)}.category:hover span,.category.active span{color:#d9cdd6}
 
@@ -52,7 +72,13 @@ footer{background:#171316;color:#fff;padding:58px 0 20px}.foot{display:grid;grid
 #toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:var(--plum);color:#fff;padding:12px 17px;border-radius:9px;font-size:13px;font-weight:600;box-shadow:0 10px 30px rgba(0,0,0,.18);opacity:0;pointer-events:none;transition:.25s;z-index:100}.show{opacity:1!important;transform:translate(-50%,0)!important}
 @media(max-width:1050px){nav{display:none}#menu{display:block}.actions>a{display:none}.hero-grid,.newsletter-grid{grid-template-columns:1fr}.blog-grid{grid-template-columns:1fr 1fr}.category-grid{grid-template-columns:repeat(3,1fr)}.foot{grid-template-columns:1fr 1fr}}
 @media(max-width:650px){
-.categories .section-head{margin-bottom:28px}.categories .category-grid{align-items:stretch}.categories .category{min-height:88px;display:flex;flex-direction:column;justify-content:center;align-items:center}.library .section-head{margin-bottom:28px}.library .blog-grid{align-items:stretch}.library .post{height:100%}.library .post-body{min-height:225px}}
+  .categories .section-head{margin-bottom:28px}.categories .category-grid{align-items:stretch}.categories .category{min-height:88px;display:flex;flex-direction:column;justify-content:center;align-items:center}.library .section-head{margin-bottom:28px}
+  .library .blog-grid{grid-template-columns:1fr;gap:20px;align-items:stretch}
+  .post-image{height:180px;padding:16px 20px}
+  .post-body{padding:20px}
+  .post h3{min-height:auto}
+  .post p{min-height:auto;margin-bottom:14px}
+}
 .journal-controls{display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-shrink:0;min-width:305px}
 .journal-controls input,.journal-controls select{height:38px;border:1px solid var(--line);background:var(--white);color:var(--ink);border-radius:7px;font:500 12px "DM Sans";outline:0}
 .journal-controls input{width:175px;padding:0 12px}

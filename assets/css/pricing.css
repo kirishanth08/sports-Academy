@@ -36,7 +36,13 @@ nav{display:flex;gap:17px;font-size:13px;font-weight:600;color:var(--muted)}nav 
 
 .included{background:var(--plum);color:#fff}.included-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px}.included h2{font:700 54px/.98 "Space Grotesk";letter-spacing:-3px;margin:12px 0}.included-copy p{font-size:14px;color:#d6cad5;line-height:1.75}.include-list{border-top:1px solid rgba(255,255,255,.18)}.include-row{display:grid;grid-template-columns:45px 1fr 1.2fr;gap:15px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.18)}.include-row b{color:var(--honey);font:700 12px "Space Grotesk"}.include-row strong{font:700 15px "Space Grotesk"}.include-row span{font-size:13px;color:#d6cad5;line-height:1.6}
 
-.faq{background:var(--soft)}.faq-list{max-width:850px;margin:auto}.faq-item{border-top:1px solid var(--line)}.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;background:transparent;border:0;color:var(--ink);padding:20px 0;text-align:left;font:700 17px "Space Grotesk";cursor:pointer}.faq-q span:last-child{font-size:22px;color:var(--plum)}.dark .faq-q span:last-child{color:var(--honey)}.faq-a{display:none;padding:0 40px 20px 0;color:var(--muted);font-size:14px;line-height:1.75}.faq-item.open .faq-a{display:block}.faq-item.open .faq-q span:last-child{transform:rotate(45deg)}
+.faq{background:var(--soft)}
+.faq .section-head{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;margin:0 auto 40px}
+.faq .section-head > div{display:flex;flex-direction:column;align-items:center;text-align:center}
+.faq .section-head .eyebrow{text-align:center;display:block}
+.faq .section-head h2{text-align:center;margin:12px 0 0}
+.faq .section-head p{text-align:center;margin:14px auto 0}
+.faq-list{max-width:850px;margin:auto}.faq-item{border-top:1px solid var(--line)}.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;background:transparent;border:0;color:var(--ink);padding:20px 0;text-align:left;font:700 17px "Space Grotesk";cursor:pointer}.faq-q span:last-child{font-size:22px;color:var(--plum)}.dark .faq-q span:last-child{color:var(--honey)}.faq-a{display:none;padding:0 40px 20px 0;color:var(--muted);font-size:14px;line-height:1.75}.faq-item.open .faq-a{display:block}.faq-item.open .faq-q span:last-child{transform:rotate(45deg)}
 
 .cta{padding:40px 0 60px}.cta-box{background:var(--honey);border-radius:23px;padding:48px;display:flex;justify-content:space-between;align-items:end;gap:40px;color:var(--plum)}.cta-box h2{font:700 51px/.98 "Space Grotesk";letter-spacing:-3px;margin:12px 0}.cta-box p{max-width:460px;color:#5f5039;font-size:14px;line-height:1.7}.btn{display:inline-block;background:var(--plum);color:#fff;padding:13px 18px;border-radius:8px;font-size:13px;font-weight:800}
 

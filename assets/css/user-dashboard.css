@@ -28,9 +28,13 @@ button{cursor:pointer}
 }
 .brand{display:flex;align-items:center;gap:11px;padding:0 10px 20px;border-bottom:1px solid #ffffff1c}
 .brand-mark{
-  width:40px;height:40px;border-radius:11px;
+  width:42px;height:42px;border-radius:12px;
+  background:linear-gradient(145deg, #4d1c4c 0%, #290b28 100%);
   display:grid;place-items:center;flex-shrink:0;
+  border:1.5px solid rgba(240,201,134,0.7);
+  box-shadow:0 4px 14px rgba(0,0,0,0.25);
 }
+.brand-mark svg{width:28px;height:28px;display:block}
 .brand strong{font:700 17px "Space Grotesk";display:block;color:#fff}
 .brand span{font-size:11px;letter-spacing:1.5px;opacity:.8;text-transform:uppercase;color:var(--gold)}
 .back-site-link{
@@ -69,6 +73,28 @@ button{cursor:pointer}
 .top-btn:hover{background:var(--soft)}
 .notification{position:relative}.notification:after{
   content:"";position:absolute;width:7px;height:7px;background:var(--gold);border-radius:50%;right:8px;top:7px
+}
+
+/* Profile on topbar right side (profile only) */
+.topbar-profile{
+  display:inline-flex;align-items:center;gap:10px;padding:5px 14px 5px 6px;
+  background:var(--plum);color:#fff;border-radius:12px;
+  border:1px solid rgba(240,201,134,0.35);margin-left:8px;box-shadow:0 4px 14px rgba(59,22,58,.15);
+}
+.topbar-profile .avatar{
+  width:36px;height:36px;border-radius:50%;background:var(--gold);color:var(--plum);
+  display:grid;place-items:center;font-weight:700;font-size:13px;flex-shrink:0;
+}
+.topbar-profile .profile-mini{
+  border-top:0;padding:0;gap:10px;display:flex;align-items:center;
+}
+.topbar-profile .profile-text{display:flex;flex-direction:column;line-height:1.25}
+.topbar-profile strong{display:block;font-size:13px;color:#fff;font-weight:700;white-space:nowrap}
+.topbar-profile span{font-size:11px;opacity:.85;color:#e8d8e7;white-space:nowrap}
+body.dark .topbar-profile{background:#2a1e2b;border-color:rgba(240,201,134,0.4)}
+@media(max-width:700px){
+  .topbar-profile .profile-text{display:none}
+  .topbar-profile{padding:4px 6px;gap:0}
 }
 .content{padding:31px 34px 50px;max-width:1450px;margin:auto}
 .welcome{
@@ -259,13 +285,13 @@ body.dark .topbar{background:#211b21}
 @media(max-width:800px){.form-grid,.kpi-grid,.support-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.toolbar{align-items:stretch;flex-direction:column}.toolbar .search{min-width:0;width:100%}}
 
 .breadcrumb-prefix{margin-left:8px}.progress-84{width:84%}.progress-76{width:76%}.progress-88{width:88%}.progress-71{width:71%}
-.brand-mark svg{width:27px}
-.brand-mark path{fill:none;stroke:var(--plum);stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round}
+
 
 /* Readability */
 p{font-size:14.5px !important;line-height:1.65}
 button,input,select,textarea{font-size:14px !important}
 td,th{font-size:13px !important;line-height:1.5}
 .nav a{font-size:13.5px}
-.logout-link{margin-top:12px;width:100%;padding:9px 12px;border-radius:8px;border:1px solid var(--line);background:none;color:inherit;font:600 12.5px "DM Sans";cursor:pointer;transition:.2s;text-align:center}
-.logout-link:hover{border-color:#3B163A;background:#3B163A;color:#fff}
+.sidebar-bottom{margin-top:auto;padding-top:16px;border-top:1px solid rgba(255,255,255,0.18)}
+.sidebar-bottom .logout-link{width:100%;padding:10px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.28);background:rgba(255,255,255,0.08);color:#ffffff;font:600 13px "DM Sans",sans-serif;cursor:pointer;transition:.2s;text-align:center;display:block}
+.sidebar-bottom .logout-link:hover{background:rgba(255,255,255,0.22);border-color:#ffffff;color:#ffffff}

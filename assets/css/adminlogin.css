@@ -24,14 +24,33 @@ main{min-height:calc(100vh - 134px);padding:46px 0 64px;display:grid;place-items
 
 /* ---- brand ---- */
 .inline-style-1,.auth-brand{margin:0 0 22px}
-.inline-style-2{color:inherit}
-.logo{display:inline-flex;align-items:center;gap:10px}
-.logo-mark{width:41px;height:41px;background:var(--plum);border-radius:11px;display:grid;place-items:center}
-.logo-mark svg{width:28px}
-.logo-mark path{fill:none;stroke:var(--honey);stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round}
-.logo-copy{display:flex;flex-direction:column;line-height:1}
-.logo-copy b{font:700 18px "Space Grotesk"}
-.logo-copy small{font-size:9px;letter-spacing:1.6px;color:var(--muted)}
+.nav-brand,.logo{display:inline-flex;align-items:center;gap:12px;text-decoration:none;transition:transform .2s ease}
+.nav-brand:hover,.logo:hover{transform:translateY(-1px)}
+.nav-brand-mark,.logo-mark{
+  width:42px;height:42px;border-radius:12px;
+  background:linear-gradient(145deg, #441743 0%, #290b28 100%);
+  display:grid;place-items:center;flex:none;
+  border:1.5px solid rgba(240, 201, 134, 0.65);
+  box-shadow:0 4px 14px rgba(59, 22, 58, 0.25);
+  position:relative;overflow:hidden;
+}
+.nav-brand-mark svg,.logo-mark svg{width:28px;height:28px;display:block}
+.nav-brand-name,.logo-copy{
+  font:800 20px/1 "Space Grotesk",sans-serif;
+  letter-spacing:-0.3px;
+  color:#171516;
+  display:flex;flex-direction:column;
+}
+.nav-brand-name small,.logo-copy small{
+  display:block;
+  font:700 8.5px/1 "DM Sans",sans-serif;
+  letter-spacing:1.8px;
+  color:#9E6B20;
+  margin-top:4px;
+  text-transform:uppercase;
+}
+body.dark .nav-brand-name,body.dark .logo-copy{color:#f7f4ee}
+body.dark .nav-brand-name small,body.dark .logo-copy small{color:#F0C986}
 
 /* ---- headings ---- */
 .eyebrow{font-size:10px;font-weight:800;letter-spacing:2.2px;color:var(--plum);margin:0 0 4px}
