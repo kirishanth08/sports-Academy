@@ -8,13 +8,16 @@
   --nav-plum: #3B163A;
 }
 
+header.site-header,
 .site-header {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 1000;
   background: var(--white, #fff);
   border-bottom: 1px solid var(--line, #ddd8d2);
-  transition: background-color 0.25s ease, border-color 0.25s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .site-nav {
@@ -243,10 +246,12 @@
 /* ==========================================================================
    DARK MODE NAVBAR VISIBILITY (Issue 14)
    ========================================================================== */
+body.dark header.site-header,
 body.dark .site-header {
   background: #141115 !important;
   border-bottom-color: rgba(240, 201, 134, 0.18) !important;
   color: #f7f4ee;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 }
 
 body.dark .site-nav .nav-brand-name {
