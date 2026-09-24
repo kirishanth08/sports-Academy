@@ -85,41 +85,11 @@ document.addEventListener("DOMContentLoaded",function(){
   });
 })();
 
-/* ===== session avatar: replaces Login/Sign Up while signed in ===== */
+/* ===== navbar auth buttons: always keep Login and Sign Up visible as usual (no profile display) ===== */
 (function(){
-  function getSession(){try{return JSON.parse(localStorage.getItem("apex-session"))}catch(err){return null}}
-  function initials(name){
-    return String(name||"U").trim().split(/\s+/).map(function(w){return w.charAt(0)}).join("").substring(0,2).toUpperCase();
-  }
   function render(){
-    var s=getSession();
-    var login=document.querySelector(".nav-login");
-    var host=login?login.parentElement:(document.querySelector(".nav-signup")?document.querySelector(".nav-signup").parentElement:null);
-    document.querySelectorAll(".nav-login,.nav-signup").forEach(function(el){el.style.display=s?"none":"";});
+    document.querySelectorAll(".nav-login,.nav-signup").forEach(function(el){el.style.display="";});
     var old=document.getElementById("navAvatar");if(old)old.remove();
-    if(!s||!host)return;
-    var chip=document.createElement("div");chip.id="navAvatar";chip.className="nav-avatar";
-    chip.innerHTML='<button class="nav-avatar-btn" type="button" aria-haspopup="true">'+
-      '<span class="nav-avatar-img">'+initials(s.name)+'</span>'+
-      '<span class="nav-avatar-name"></span>'+
-      '<svg class="caret" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>'+
-      '<div class="nav-avatar-menu"><div class="na-head"><span class="nav-avatar-img">'+initials(s.name)+'</span>'+
-      '<span><strong></strong><small></small></span></div>'+
-      '<a class="na-dash" href="#"></a><button type="button" class="na-out">Log out</button></div>';
-    chip.querySelector(".nav-avatar-name").textContent=s.name||"Account";
-    chip.querySelector(".na-head strong").textContent=s.name||"";
-    chip.querySelector(".na-head small").textContent=(s.role==="admin"?"Administrator - ":"")+(s.email||"");
-    chip.querySelector(".na-dash").href=(s.role==="admin")?"admin-dashboard.html":"user-dashboard.html";
-    chip.querySelector(".na-dash").textContent=(s.role==="admin"?"Admin dashboard":"My dashboard");
-    host.appendChild(chip);
-    chip.querySelector(".nav-avatar-btn").addEventListener("click",function(e){e.stopPropagation();chip.classList.toggle("open");});
-    chip.addEventListener("click",function(e){e.stopPropagation();});
-    document.addEventListener("click",function(){chip.classList.remove("open");});
-    chip.querySelector(".na-out").addEventListener("click",function(){
-      localStorage.removeItem("apex-session");
-      chip.remove();
-      document.querySelectorAll(".nav-login,.nav-signup").forEach(function(el){el.style.display="";});
-    });
   }
   if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",render);}else{render();}
 })();

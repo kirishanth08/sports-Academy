@@ -120,9 +120,21 @@ header.site-header,
   color: #171516;
 }
 
-.site-nav .nav-links a.nav-dash-link {
+.site-nav .nav-links a.nav-dash-link,
+.site-nav a.mob-dash {
   font-weight: 700;
   color: #3B163A;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.site-nav .nav-links a.nav-dash-link svg,
+.site-nav a.mob-dash svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  vertical-align: -2px;
 }
 
 .site-nav .nav-arrow {

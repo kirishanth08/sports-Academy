@@ -2,7 +2,7 @@ const body=document.body,theme=document.getElementById("theme"),rtl=document.get
 
 function showToast(msg){
 toast.textContent=msg;toast.classList.add("show");
-clearTimeout(window.tt);window.tt=setTimeout(()=>toast.classList.remove("show"),2300);
+clearTimeout(window.tt);window.tt=setTimeout(()=>toast.classList.remove("show"),2600);
 }
 
 theme.onclick=()=>{
@@ -39,26 +39,60 @@ load(){try{return JSON.parse(localStorage.getItem("apex-accounts"))||[]}catch(er
 save(a){localStorage.setItem("apex-accounts",JSON.stringify(a))},
 find(email){return this.load().find(x=>x.email.toLowerCase()===String(email).toLowerCase())}
 };
+
+/* CTA Sign-up Button -> Dummy Page: Only shows success message, NO REDIRECT */
 document.getElementById("adminSignupForm").onsubmit=e=>{
 e.preventDefault();
 const password=document.getElementById("password").value;
 const confirm=document.getElementById("confirmPassword").value;
-if(password!==confirm){showToast("Passwords do not match.");return;}
+if(password && confirm && password!==confirm){showToast("Passwords do not match.");return;}
 const email=document.getElementById("email").value.trim();
-if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){showToast("Please enter a valid email address.");return;}
-if(apexAuth.find(email)){showToast("An account with this email already exists.");return;}
+if(email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){showToast("Please enter a valid email address.");return;}
 const roleSel=document.getElementById("role");
-const name=(document.getElementById("firstName").value.trim()+" "+document.getElementById("lastName").value.trim()).trim();
+const firstName=(document.getElementById("firstName").value||"").trim();
+const lastName=(document.getElementById("lastName").value||"").trim();
+const name=(firstName+" "+lastName).trim()||"Academy Administrator";
+
 const accounts=apexAuth.load();
-accounts.push({name:name,email:email.toLowerCase(),password:password,role:"admin",title:roleSel?roleSel.value:"Administrator"});
+const existingIndex=accounts.findIndex(x=>x.email.toLowerCase()===email.toLowerCase());
+if(existingIndex>=0){
+  accounts[existingIndex]={name:name,email:email.toLowerCase(),password:password,role:"admin",title:roleSel?roleSel.value:"Administrator"};
+} else {
+  accounts.push({name:name,email:email.toLowerCase(),password:password,role:"admin",title:roleSel?roleSel.value:"Administrator"});
+}
 apexAuth.save(accounts);
-showToast("Admin account created! Redirecting you to sign in...");
-setTimeout(()=>location.href="adminlogin.html?registered=1&email="+encodeURIComponent(email),900);
+localStorage.setItem("apex-session",JSON.stringify({name:name,email:email,role:"admin",title:roleSel?roleSel.value:"Administrator"}));
+
+// In-page success banner
+const feedback=document.getElementById("authFeedback");
+const title=document.getElementById("authFeedbackTitle");
+const msg=document.getElementById("authFeedbackMsg");
+if(feedback){
+  if(title) title.textContent="Admin Account Created Successfully!";
+  if(msg) msg.textContent="Welcome, "+name+"! Your staff account ("+(roleSel?roleSel.value:"Administrator")+") has been created.";
+  feedback.classList.add("show");
+  feedback.scrollIntoView({behavior:"smooth",block:"nearest"});
+}
+
+// Toast
+showToast("✓ Admin account created successfully!");
+
+// Button state
+const submitBtn=document.querySelector("#adminSignupForm button.submit");
+if(submitBtn){
+  const originalText=submitBtn.innerHTML;
+  submitBtn.classList.add("success-state");
+  submitBtn.innerHTML="✓ Admin Account Created!";
+  setTimeout(()=>{
+    submitBtn.classList.remove("success-state");
+    submitBtn.innerHTML=originalText;
+  },3200);
+}
 };
 
 document.getElementById("termsLink").onclick=e=>{
-e.preventDefault();showToast("Terms of Service can be connected here.");
+e.preventDefault();showToast("Staff terms: Academy administrator authorization acknowledged.");
 };
 document.getElementById("privacyLink").onclick=e=>{
-e.preventDefault();showToast("Privacy Policy can be connected here.");
+e.preventDefault();showToast("Staff privacy policy: Academy operational data protected.");
 };

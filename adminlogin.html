@@ -43,16 +43,24 @@
 <h1>Admin sign in.</h1>
 <p class="sub">Access academy operations, manage students and coaches, review schedules and keep training programs moving.</p>
 
-<form class="form" id="adminLoginForm">
+<div class="auth-feedback" id="authFeedback" role="alert">
+  <span class="feedback-icon">✓</span>
+  <div class="auth-feedback-text">
+    <strong id="authFeedbackTitle">Admin Sign In Successful!</strong>
+    <p id="authFeedbackMsg">Welcome back, Academy Admin.</p>
+  </div>
+</div>
+
+<form class="form" id="adminLoginForm" novalidate>
 <div class="field">
 <label for="email">ADMIN EMAIL</label>
-<input id="email" type="email" required autocomplete="username" placeholder="admin@apexmotion.com">
+<input id="email" type="text" autocomplete="username" placeholder="admin@apexmotion.com">
 </div>
 
 <div class="field">
 <label for="password">PASSWORD</label>
 <div class="input-wrap">
-<input id="password" type="password" required autocomplete="current-password" placeholder="Enter your password">
+<input id="password" type="password" autocomplete="current-password" placeholder="Enter your password">
 <button type="button" class="toggle-pass" id="togglePass">Show</button>
 </div>
 </div>
@@ -85,7 +93,7 @@
 
 <div id="toast"></div>
 
-<script src="assets/js/adminlogin.js"></script>
+<script src="assets/js/adminlogin.js?v=20260924_nocache"></script>
 <script src="assets/js/site.js"></script>
   <script src="assets/js/navigation.js"></script>
   <script src="assets/js/animations.js"></script>

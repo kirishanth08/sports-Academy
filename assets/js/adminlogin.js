@@ -7,7 +7,7 @@ function showToast(msg){
 toast.textContent=msg;
 toast.classList.add("show");
 clearTimeout(window.toastTimer);
-window.toastTimer=setTimeout(()=>toast.classList.remove("show"),2300);
+window.toastTimer=setTimeout(()=>toast.classList.remove("show"),2600);
 }
 
 theme.onclick=()=>{
@@ -57,13 +57,39 @@ find(email,role){return this.load().find(a=>a.email.toLowerCase()===String(email
 if(q.get("email"))document.getElementById("email").value=q.get("email");
 if(q.get("registered")==="1")showToast("Admin account created - please sign in.");
 })();
+
+/* CTA Sign-in Button -> Dummy Page: Only shows success message, NO REDIRECT */
 document.getElementById("adminLoginForm").onsubmit=e=>{
 e.preventDefault();
-const email=document.getElementById("email").value.trim(),password=document.getElementById("password").value;
+const email=(document.getElementById("email").value||"").trim();
 const account=apexAuth.find(email,"admin");
-if(!account){showToast("No admin account found with this email.");return}
-if(account.password!==password){showToast("Incorrect password. Please try again.");return}
-localStorage.setItem("apex-session",JSON.stringify({name:account.name,email:account.email,role:"admin"}));
-showToast("Welcome back, "+account.name+"!");
-setTimeout(()=>location.href="admin-dashboard.html",800);
+const name=account?account.name:"Academy Admin";
+
+localStorage.setItem("apex-session",JSON.stringify({name:name,email:email||"admin@apexmotion.com",role:"admin"}));
+
+// In-page success banner
+const feedback=document.getElementById("authFeedback");
+const title=document.getElementById("authFeedbackTitle");
+const msg=document.getElementById("authFeedbackMsg");
+if(feedback){
+  if(title) title.textContent="Admin Sign In Successful!";
+  if(msg) msg.textContent="Welcome back, "+name+"! You have signed in with administrator privileges.";
+  feedback.classList.add("show");
+  feedback.scrollIntoView({behavior:"smooth",block:"nearest"});
+}
+
+// Toast
+showToast("✓ Admin sign-in successful!");
+
+// Button state
+const submitBtn=document.querySelector("#adminLoginForm button.submit");
+if(submitBtn){
+  const originalText=submitBtn.innerHTML;
+  submitBtn.classList.add("success-state");
+  submitBtn.innerHTML="✓ Admin Signed In Successfully!";
+  setTimeout(()=>{
+    submitBtn.classList.remove("success-state");
+    submitBtn.innerHTML=originalText;
+  },3200);
+}
 };
